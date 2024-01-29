@@ -6,9 +6,9 @@ export default function ButtonStyle ( param:any ) {
     <Box>
       <Button
         sx={{
-          width: param.width, height: '70px',
+          width: { lg: '400px', md: '355px', sm: '260px', xs: '150px' }, height: { md: '70px', sm: '62px', xs: '60px' },
           border: '2px solid #000000', borderRadius: '50px',
-          backgroundColor: '#e3b332',
+          backgroundColor: '#FBC837',
           boxShadow: '5px 5px 0px #000000, 10px 12px 55px -20px #FBC837',
           textTransform: 'none',
           color: 'black',

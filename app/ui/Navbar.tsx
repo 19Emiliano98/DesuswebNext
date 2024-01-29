@@ -42,7 +42,7 @@ export default function Navbar () {
       >
         <CardMedia
           sx={{ 
-            width: '128px', height: '94px', 
+            width: { sm: '128px', xs: '70px' }, height: { sm: '94px', xs: '60px'}, 
             ml: { lg: 20, md: 4, sm: 3 }
           }}
           image="/dwLogo.png"
