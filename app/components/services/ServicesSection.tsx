@@ -63,7 +63,7 @@ export default function ServicesSection () {
         right={ true }
         backgroundColorCards={ 'white' }
         colorFontCards={ 'black' }
-        iconCardTop={<LocalGroceryStoreOutlinedIcon />}
+        iconCardTop={<LocalGroceryStoreOutlinedIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '20px', xs: '15px' } }}/>}
       />
 
       <ServicesCards 
@@ -71,7 +71,7 @@ export default function ServicesSection () {
         right={ false }
         backgroundColorCards={ '#8740E3' }
         colorFontCards={ 'white' }
-        iconCardTop={<ViewQuiltIcon />}
+        iconCardTop={<ViewQuiltIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '20px', xs: '15px' } }}/>}
       />
 
       <ServicesCards 
@@ -79,7 +79,7 @@ export default function ServicesSection () {
         right={ true }
         backgroundColorCards={ '#0F235E' }
         colorFontCards={ 'white' }
-        iconCardTop={<LocalGroceryStoreOutlinedIcon />}
+        iconCardTop={<LocalGroceryStoreOutlinedIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '20px', xs: '15px' } }}/>}
       />
     </Box>
   )

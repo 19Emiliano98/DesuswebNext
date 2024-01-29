@@ -15,7 +15,9 @@ const images = [
 export default function SkillsCards() {
   const card = (
     images.map( ( x, index ) => 
-      <>
+      <Box 
+        key={index}
+      >
         <Card
           sx={{
             display: 'flex', justifyContent: 'center', alignItems: 'center',
@@ -26,7 +28,6 @@ export default function SkillsCards() {
             boxShadow: '8px 8px 0px #000000 , 10px 10px 15px -5px rgba(5, 22, 34, 0.5)', // tamanio del shadow alterado por emi
             m: 1.3
           }}
-          key={index}
         >
           <CardContent>
             <CardMedia
@@ -40,7 +41,7 @@ export default function SkillsCards() {
               />
           </CardContent>
         </Card>
-      </>
+      </Box>
     )
   );
 
@@ -62,14 +63,14 @@ export default function SkillsCards() {
         Trabajamos con:
       </Typography>
 
-      <Box 
-        sx={{ 
-          display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
-          width: { lg: '1200px', md: '800px', sm: '600px' }
-        }}
-      >
-        {card}
-      </Box>
+    <Box
+      sx={{ 
+        display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
+        width: { lg: '1200px', md: '800px', sm: '600px' }
+      }}
+    >
+      { card }
+    </Box>
     </Box>
   )
 }

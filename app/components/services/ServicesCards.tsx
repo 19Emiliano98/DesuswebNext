@@ -14,7 +14,7 @@ export default function ServicesCards ( param:any ) {
         display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', 
         right: { xl: '17%', lg: '8%', md: '5%', sm: '2%', xs: '5%' }, mt: -5, 
         width: { md: '95px', sm: '75px', xs: '75px'}, height: { md: '95px', sm: '75px', xs: '75px'}, 
-        borderRadius: '100%', backgroundColor: '#FB9039',
+        borderRadius: '100%', border: '2px solid black', backgroundColor: '#FB9039',
         filter: 'drop-shadow(10px 10px 15px rgba(5, 22, 34, 0.50)) drop-shadow(6px 6px 0px #191919)'
       }}
     >
@@ -28,7 +28,7 @@ export default function ServicesCards ( param:any ) {
         display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', 
         left: { xl: '17%', lg: '8%', md: '5%', sm: '2%', xs: '5%' }, mt: -5, 
         width: { md: '95px', sm: '75px', xs: '75px'}, height: { md: '95px', sm: '75px', xs: '75px'}, 
-        borderRadius: '100%', backgroundColor: '#FB9039',
+        borderRadius: '100%', border: '2px solid black', backgroundColor: '#FB9039',
         filter: 'drop-shadow(10px 10px 15px rgba(5, 22, 34, 0.50)) drop-shadow(6px 6px 0px #191919)'
       }}
     >
@@ -45,7 +45,7 @@ export default function ServicesCards ( param:any ) {
           display: 'flex', justifyContent: 'center', 
           width: { lg: '1140px', md: '850px', sm: '700px'}, 
           borderRadius: '25px', backgroundColor: backgroundColorCards,
-          color: colorFontCards
+          color: colorFontCards, boxShadow: "10px 10px 15px -5px #0516227f, 6px 6px 0 0 #191919"
         }}
       >
         <CardContent sx={{ width: { lg: '1000px', md: '780px', sm: '670px' } }}>
