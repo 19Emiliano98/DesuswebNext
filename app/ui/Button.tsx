@@ -5,8 +5,9 @@ export default function ButtonStyle ( param:any ) {
   return(
     <Box>
       <Button
+        type= { param.type }
         sx={{
-          width: { lg: '400px', md: '355px', sm: '260px', xs: '150px' }, height: { md: '70px', sm: '62px', xs: '60px' },
+          width: { lg: '400px', md: '355px', sm: '260px', xs: '245px' }, height: { md: '70px', sm: '62px', xs: '60px' },
           border: '2px solid #000000', borderRadius: '50px',
           backgroundColor: '#FBC837',
           boxShadow: '5px 5px 0px #000000, 10px 12px 55px -20px #FBC837',

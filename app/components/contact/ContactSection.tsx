@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-/* import Formulary from "./Formulary"; */
+import Formulary from "./Formulary";
 
 export default function ContactSection () {
   return (
@@ -36,7 +36,7 @@ export default function ContactSection () {
 						Contáctanos:
 					</Typography>
 				</Box>
-					{/* <Formulary /> */}
+					<Formulary />
 			</Box>
 		</Box>
 	);

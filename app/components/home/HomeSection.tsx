@@ -22,18 +22,43 @@ export default function HomeSection() {
   });
 
   return (
-    <Box sx={{ backgroundColor: '#1C1C1C', color: '#FFFFFF', height: { lg: '1180px', md: '875px', sm: '700px', xs: '715px' } }}>
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pt: '70px' }}>
-        <Box sx={{ mr: { lg: '140px', md: '80px', sm: '85px' } }}>
+    <Box 
+      sx={{ 
+        backgroundColor: '#1C1C1C', color: '#FFFFFF', 
+        height: { lg: '1130px', md: '864px', sm: '726px', xs: '1005px' } ,
+        pt: 6
+      }}
+    >
+      <Box 
+        sx={{ 
+          display: 'flex', flexDirection: { sm: 'row-reverse', xs: 'column' },
+          justifyContent: 'center', alignItems: 'center'
+        }}
+      >
+        <CardMedia
+          sx={{
+            width: { lg: '664px', md: '460px', sm: '380px', xs: '280px' }, 
+            height: { lg: '664px', md: '460px', sm: '380px', xs: '280px' }
+          }}
+          image='/presentationImage.png'
+        />
+          
+        <Box 
+          sx={{ 
+            display: 'flex', flexDirection: 'column',
+            alignItems: 'center',
+            mr: { lg: 18, md: 5, sm: 4, xs: 0 }, mt: { sm: 0, xs: 4 }
+          }}
+        >
           <Typography 
-            sx={{ 
-              width: { md: 400, sm: 250, xs: 200 },
+            sx={{
+              width: { md: 400, sm: 250, xs: 240 },
               fontFamily: TypoH1.fontFamily,
               fontSize: TypoH1.fontSize,
               fontStyle: TypoH1.fontStyle,
               fontWeight: TypoH1.fontWeight,
               lineHeight: TypoH1.lineHeight,
-              mb: { lg: '70px', md: '85px', sm: '50px' }
+              mb: { lg: '70px', md: '85px', sm: '50px', xs: '35px' }
             }} 
             variant="h1"
           >
@@ -41,27 +66,20 @@ export default function HomeSection() {
             <Box 
               sx={{ 
                 position: 'absolute', 
-                mt: { lg: -9.8, md: -8.1, sm: -5.6 }, 
-                ml: { lg: 27, md: 23, sm: 16 }
+                mt: { lg: -9.8, md: -8.1, sm: -5.6, xs: -5 }, 
+                ml: { lg: 27, md: 23, sm: 16, xs: 14.6 }
               }}
             >
               <TitleAnimation />
             </Box>
           </Typography>
 
-          <Button content={'Contáctanos'}/>
+          <Button content={'Contáctanos'} type={'button'}/>
         </Box>
-
-        <CardMedia
-          sx={{
-            width: { lg: '664px', md: '400px', xs: '280px' }, height: { lg: '664px', md: '400px', xs: '280px' }
-          }}
-          image='/presentationImage.png'
-        />
       </Box>
       
       {/* // !! Scroll */}
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 5 }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: { sm: 5, xs: 12 } }}>
         <Typography sx={{ fontSize: { md: '23px', xs: '17px' } }} variant="body2">Scroll</Typography>
 				<AnimatedArrowDownwardIcon sx={{ color: '#FBC837' }}/>
         <Box 
@@ -74,8 +92,7 @@ export default function HomeSection() {
         </Box>
 			</Box>
       
-      
-        <SkillsCards />
+      <SkillsCards />
       
     </Box>
   );

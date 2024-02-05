@@ -11,7 +11,7 @@ export default function ServicesSection () {
     <Box 
       sx={{ 
         display: 'flex', flexDirection: 'column', alignItems: 'center',
-        backgroundColor: '#FBC837', mt: { lg: 46, md: 34, sm: 31 }, pt: 4
+        backgroundColor: '#FBC837', mt: { lg: 46, md: 34, sm: 31, xs: 24 }, pt: 4
       }}
     >
       <Typography 
@@ -27,7 +27,12 @@ export default function ServicesSection () {
         Nuestros Servicios:
       </Typography>
 
-      <Box sx={{ display: 'flex', alignItems: 'center', mt: 3.5, mb: 8 }}>
+      <Box 
+        sx={{ 
+          display: 'flex', alignItems: 'center',
+          mt: 3.5, mb: { sm: 8, xs: 12 }, ml: { sm: 0, xs: 1 }
+        }}
+      >
         <VerifiedIcon sx={{ color: '#067ACC', mr: 1 }} fontSize="large"/>
 
         <Typography 
@@ -45,12 +50,15 @@ export default function ServicesSection () {
 
         <Typography 
           sx={{
+            position: { sm: 'static', xs: 'absolute' },
             fontFamily: TypoBody1.fontFamily,
             fontSize: TypoBody1.fontSize,
             fontStyle: TypoBody1.fontStyle,
             fontWeight: 700,
             lineHeight: TypoBody1.lineHeight,
-            color: '#067ACC', ml: 0.8
+            color: '#067ACC', 
+            mt: { sm: 0, xs: 3.4 },
+            ml: { sm: 0.8, xs: 29 }
           }}
           variant="body1"
         >
@@ -63,7 +71,7 @@ export default function ServicesSection () {
         right={ true }
         backgroundColorCards={ 'white' }
         colorFontCards={ 'black' }
-        iconCardTop={<LocalGroceryStoreOutlinedIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '20px', xs: '15px' } }}/>}
+        iconCardTop={<LocalGroceryStoreOutlinedIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '34px', xs: '29px' } }}/>}
       />
 
       <ServicesCards 
@@ -71,7 +79,7 @@ export default function ServicesSection () {
         right={ false }
         backgroundColorCards={ '#8740E3' }
         colorFontCards={ 'white' }
-        iconCardTop={<ViewQuiltIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '20px', xs: '15px' } }}/>}
+        iconCardTop={<ViewQuiltIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '34px', xs: '29px' } }}/>}
       />
 
       <ServicesCards 
@@ -79,7 +87,7 @@ export default function ServicesSection () {
         right={ true }
         backgroundColorCards={ '#0F235E' }
         colorFontCards={ 'white' }
-        iconCardTop={<LocalGroceryStoreOutlinedIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '20px', xs: '15px' } }}/>}
+        iconCardTop={<LocalGroceryStoreOutlinedIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '34px', xs: '29px' } }}/>}
       />
     </Box>
   )

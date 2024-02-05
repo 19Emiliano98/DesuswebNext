@@ -4,7 +4,7 @@ const redHatDisplay = Red_Hat_Display({ subsets: ["latin"], weight: [ '500', '70
 
 export const TypoH1 = {
   fontFamily: spaceGrotesk,
-  fontSize: { lg: '52px', md: '43px', xs: '30px' },
+  fontSize: { lg: '52px', md: '43px', xs: '27px' },
   fontStyle: 'normal',
   fontWeight: 700,
   lineHeight: '150%'
@@ -29,8 +29,16 @@ export const TypoH3 = {
 
 export const TypoBody1 = {
   fontFamily: redHatDisplay,
-  fontSize: {md: '21px', xs: '17px'},
+  fontSize: { md: '21px', xs: '16px' },
   fontStyle: 'normal',
   fontWeight: 500,
   lineHeight: '170%'
+}
+
+export const TypoFormError= {
+  fontFamily: spaceGrotesk,
+  color: 'red',
+  fontSize: { md: '10px', xs: '8px' },
+  fontStyle: 'normal',
+  fontWeight: 500
 }

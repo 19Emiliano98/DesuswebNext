@@ -20,20 +20,21 @@ export default function SkillsCards() {
       >
         <Card
           sx={{
-            display: 'flex', justifyContent: 'center', alignItems: 'center',
-            width: { lg: '200px', md: '138px', sm: '113px' }, height: { lg: '200px', md: '138px', sm: '113px' },
+            display: 'flex', justifyContent: 'center', alignItems: { md: 'center', xs: 'normal' },
+            width: { lg: '200px', md: '138px', sm: '113px', xs: '95px' }, 
+            height: { lg: '200px', md: '138px', sm: '113px', xs: '95px' },
             borderRadius: '25px',
             backgroundColor: '#FBC837',
             border: '4px solid black',
             boxShadow: '8px 8px 0px #000000 , 10px 10px 15px -5px rgba(5, 22, 34, 0.5)', // tamanio del shadow alterado por emi
-            m: 1.3
+            m: 1.1
           }}
         >
           <CardContent>
             <CardMedia
               sx={{
-                width: { lg: '110px', md: '90px', sm: '67px' },
-                height: { lg: '110px', md: '90px', sm: '67px' }
+                width: { lg: '133px', md: '95px', sm: '76px', xs: '60px' },
+                height: { lg: '133px', md: '95px', sm: '76px', xs: '60px' }
               }}
               component="img"
               image={x}
