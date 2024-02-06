@@ -12,7 +12,7 @@ export const TypoH1 = {
 
 export const TypoH2 = {
   fontFamily: spaceGrotesk,
-  fontSize: {md: '44px', xs: '32px'},
+  fontSize: {md: '40px', xs: '32px'},
   fontStyle: 'normal',
   fontWeight: 500,
   lineHeight: '150%'
@@ -20,7 +20,7 @@ export const TypoH2 = {
 
 export const TypoH3 = {
   fontFamily: spaceGrotesk,
-  fontSize: { md: '21px', xs: '17px' },
+  fontSize: { md: '24px', xs: '17px' },
   fontStyle: 'normal',
   fontWeight: 500,
   lineHeight: '150%',
@@ -29,7 +29,7 @@ export const TypoH3 = {
 
 export const TypoBody1 = {
   fontFamily: redHatDisplay,
-  fontSize: { md: '21px', xs: '16px' },
+  fontSize: { md: '22px', xs: '16px' },
   fontStyle: 'normal',
   fontWeight: 500,
   lineHeight: '170%'

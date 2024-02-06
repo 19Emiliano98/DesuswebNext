@@ -1,10 +1,13 @@
 'use client'
+
 import { Box, TextField, Typography, ThemeProvider, createTheme } from '@mui/material';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Swal from 'sweetalert2';
 import { userSchema, mappedPlans } from "./userSchema";
 import { TypoFormError } from '../../globalStyles';
 import Button from '../../ui/Button';
+import { grey } from '@mui/material/colors';
 
 type Inputs = {
   name: string;
@@ -14,11 +17,32 @@ type Inputs = {
   comment: string;
 };
 
+const theme:object = createTheme({
+  palette: {
+    primary: { main: grey[900] }
+  },
+});
+
+const url:string = 'https://desusweb.com/api/mail/';
+const key:string = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'; //? Key de testeo para modo local
+//const key = '6Le8M9AoAAAAAHpXqz7JVdZyWB824wDhgn2pQF56';
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'bottom-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didRender: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
 export default function Formulary() {
   const {
     register,
     handleSubmit,
-    /* watch, */
     formState: { errors },
   } = useForm<Inputs>({
     resolver: zodResolver(userSchema),
@@ -30,64 +54,46 @@ export default function Formulary() {
     </option>
   ));
   
-  console.log(errors);
-  
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+
+    Toast.fire({
+      icon: 'success',
+      title: 'Datos enviados!'
+    })
   };
 
   return(
     <Box
       sx={{
+        mx: 'auto',
         background:"#fff",
-        width: { lg: '60%',sm: '75%', xs: '100%' }, 
-        ml: { lg: '20%', sm: '12%', xs: '-0.2%' },
-        '& .MuiTextField-root': { my: '13px', width: '90%' }
+        width: { lg: '60%',sm: '75%', xs: '90%' },
+        border: '2px solid #051622', borderRadius: '25px', 
+        boxShadow: '6px 6px 0px #191919, 10px 10px 15px -5px rgba(5, 22, 34, 0.5)',
+        '& .MuiTextField-root': { my: '13px' }
       }}
     >
       <Box 
         component="form" 
         onSubmit={handleSubmit(onSubmit)}
         sx={{
-          display: 'flex', flexDirection: 'column', alignItems: 'center',
-          py: 6
+          display: 'flex', flexDirection: 'column',
+          width: { xl: 870, lg: 750, md: 680, sm: 520, xs: 300 },
+          py: 6, mx: 'auto'
         }}
       >
-        <TextField
-          required
-          id='name'
-          type='text'
-          label='Nombre'
-          {...register("name")}
-          error={ errors.name?.message ? true : false }
-          /* error={ formik.touched.nombre && formik.errors.nombre ? true : false }
-          helperText={ formik.touched.nombre && formik.errors.nombre ? formik.errors.nombre : false }
-          onChange={formik.handleChange}
-          value={formik.values.nombre} */
-        />
-        { errors.name?.message && 
-        <Typography 
-          variant='body2' 
-          sx={{ 
-            fontFamily: TypoFormError.fontFamily,
-            color: TypoFormError.color,
-            fontSize: TypoFormError.fontSize,
-            fontStyle: TypoFormError.fontStyle,
-            fontWeight: TypoFormError.fontWeight
-          }}
-        >
-          {errors.name?.message}
-        </Typography>}
-
-        <TextField
-          required
-          id='surname'
-          type='text'
-          label='Apellido'
-          {...register("surname")}
-          error={ errors.surname?.message ? true : false }
-        />
-        { errors.surname?.message && 
+        <ThemeProvider theme={theme}>
+          <TextField
+            required
+            id='name'
+            type='text'
+            label='Nombre'
+            {...register("name")}
+            error={ errors.name?.message ? true : false }
+            inputProps={{ color: "secondary" }}
+          />
+          { errors.name?.message && 
           <Typography 
             variant='body2' 
             sx={{ 
@@ -98,85 +104,108 @@ export default function Formulary() {
               fontWeight: TypoFormError.fontWeight
             }}
           >
-            {errors.surname?.message}
-          </Typography>
-        }
+            {errors.name?.message}
+          </Typography>}
 
-        <TextField
-          required
-          id='email'
-          type='email'
-          label='E-mail'
-          {...register("email")}
-          error={ errors.email?.message ? true : false }
-        />
-        { errors.email?.message && 
-          <Typography 
-            variant='body2' 
-            sx={{ 
-              fontFamily: TypoFormError.fontFamily,
-              color: TypoFormError.color,
-              fontSize: TypoFormError.fontSize,
-              fontStyle: TypoFormError.fontStyle,
-              fontWeight: TypoFormError.fontWeight
-            }}
-          >
-            {errors.email?.message}
-          </Typography>
-        }
+          <TextField
+            required
+            id='surname'
+            type='text'
+            label='Apellido'
+            {...register("surname")}
+            error={ errors.surname?.message ? true : false }
+          />
+          { errors.surname?.message && 
+            <Typography 
+              variant='body2' 
+              sx={{ 
+                fontFamily: TypoFormError.fontFamily,
+                color: TypoFormError.color,
+                fontSize: TypoFormError.fontSize,
+                fontStyle: TypoFormError.fontStyle,
+                fontWeight: TypoFormError.fontWeight
+              }}
+            >
+              {errors.surname?.message}
+            </Typography>
+          }
 
-        <TextField 
-          label="Selecciona un plan"
-          id="plan"
-          type='select'
-          select
-          SelectProps={{
-            native: true
-          }}
-          {...register("plan")}
-        >
-          {plansOptions}
-        </TextField>
-        { errors.plan?.message && 
-          <Typography 
-            variant='body2' 
-            sx={{ 
-              fontFamily: TypoFormError.fontFamily,
-              color: TypoFormError.color,
-              fontSize: TypoFormError.fontSize,
-              fontStyle: TypoFormError.fontStyle,
-              fontWeight: TypoFormError.fontWeight
-            }}
-          >
-            {errors.plan?.message}
-          </Typography>
-        }
+          <TextField
+            required
+            id='email'
+            type='email'
+            label='E-mail'
+            {...register("email")}
+            error={ errors.email?.message ? true : false }
+          />
+          { errors.email?.message && 
+            <Typography 
+              variant='body2' 
+              sx={{ 
+                fontFamily: TypoFormError.fontFamily,
+                color: TypoFormError.color,
+                fontSize: TypoFormError.fontSize,
+                fontStyle: TypoFormError.fontStyle,
+                fontWeight: TypoFormError.fontWeight
+              }}
+            >
+              {errors.email?.message}
+            </Typography>
+          }
 
-        <TextField
-          id='comment'
-          type='text'
-          multiline
-          rows={5}
-          label='Dejanos un comentario'
-          {...register("comment")}
-          error={ errors.comment?.message ? true : false }
-        />
-        { errors.comment?.message && 
-          <Typography 
-            variant='body2' 
-            sx={{ 
-              fontFamily: TypoFormError.fontFamily,
-              color: TypoFormError.color,
-              fontSize: TypoFormError.fontSize,
-              fontStyle: TypoFormError.fontStyle,
-              fontWeight: TypoFormError.fontWeight
+          <TextField 
+            label="Selecciona un plan"
+            id="plan"
+            type='select'
+            select
+            SelectProps={{
+              native: true
             }}
+            {...register("plan")}
           >
-            {errors.comment?.message}
-          </Typography>
-        }
+            {plansOptions}
+          </TextField>
+          { errors.plan?.message && 
+            <Typography 
+              variant='body2' 
+              sx={{ 
+                fontFamily: TypoFormError.fontFamily,
+                color: TypoFormError.color,
+                fontSize: TypoFormError.fontSize,
+                fontStyle: TypoFormError.fontStyle,
+                fontWeight: TypoFormError.fontWeight
+              }}
+            >
+              {errors.plan?.message}
+            </Typography>
+          }
+
+          <TextField
+            id='comment'
+            type='text'
+            multiline
+            rows={5}
+            label='Dejanos un comentario'
+            {...register("comment")}
+            error={ errors.comment?.message ? true : false }
+          />
+          { errors.comment?.message && 
+            <Typography 
+              variant='body2' 
+              sx={{ 
+                fontFamily: TypoFormError.fontFamily,
+                color: TypoFormError.color,
+                fontSize: TypoFormError.fontSize,
+                fontStyle: TypoFormError.fontStyle,
+                fontWeight: TypoFormError.fontWeight
+              }}
+            >
+              {errors.comment?.message}
+            </Typography>
+          }
+        </ThemeProvider>
       
-      <Box sx={{ mt: 6 }}>
+      <Box sx={{  m:'80px auto 0px auto' }}>
         <Button content={'Enviar'} type={'submit'}>Submit</Button>
       </Box>
       

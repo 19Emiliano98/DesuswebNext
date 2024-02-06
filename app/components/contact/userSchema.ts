@@ -1,14 +1,13 @@
 import { z } from "zod";
 
-const plans = ["free", "basic", "medium", "pro"] as const;
+const plans = ["TiendaOnline", "LandingPage", "DesarrolloLibre"] as const;
 
 export type Plans = (typeof plans)[number];
 
 export const mappedPlans: {[key in Plans]: string} = {
-    basic: "Basic",
-    free: "Free",
-    medium: "Medium",
-    pro: "Pro"
+    TiendaOnline: "Tienda Online",
+    LandingPage: "Landing Page",
+    DesarrolloLibre: "Desarrollo Libre"
 }
 
 export const userSchema = z.object({
