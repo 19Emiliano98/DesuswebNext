@@ -7,9 +7,8 @@ export default function ContactSection () {
 		<Box id="contacto">
 			<Box
 				sx={{
-					background: "#fbc837",
 					boxShadow: "0 0 20 0 #23232333, 0 8px 20px 0 #23232333",
-					pb: 10
+					pb: 20
 				}}
 			>
 				<Box

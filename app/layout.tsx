@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import './main.css'
 import Navbar from "./ui/Navbar";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body style={{ margin: '0px' }}>
+      <body style={{ margin: '0px', scrollbarColor: 'red' }}>
         <Navbar />
 
         {children}

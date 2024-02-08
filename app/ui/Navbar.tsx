@@ -23,7 +23,7 @@ export default function Navbar () {
           sx={{
             textDecoration: 'none',
             fontSize: { sm: '24px', xs: '13px' },
-            color: '#051622', fontWeight: 600, fontFamily: `${spaceGrotesk} antialiased`
+            color: '#F5F5F5', fontWeight: 600, fontFamily: `${spaceGrotesk} antialiased`
           }}
         >
           {x.title}
@@ -37,18 +37,18 @@ export default function Navbar () {
       <Toolbar 
         sx={{
           display: 'flex', justifyContent: 'space-between',
-          backgroundColor: '#FBC837', height: '90px'
+          backgroundColor: '#181818', height: '90px'
         }}
       >
         <CardMedia
           sx={{ 
-            width: { sm: '128px', xs: '70px' }, height: { sm: '94px', xs: '60px'}, 
+            width: { sm: '128px', xs: '70px' }, height: { sm: '94px', xs: '60px'},
             ml: { lg: 20, md: 4, sm: 3 }
           }}
           image="/dwLogo.png"
         />
-        <Box sx={{ display: 'flex', mr: { lg: '280px', md: 5, sm: 1 } }}>
 
+        <Box sx={{ display: 'flex', mr: { lg: '280px', md: 5, sm: 1 } }}>
           { renderOptionBar }
         </Box>
       </Toolbar>

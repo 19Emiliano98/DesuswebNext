@@ -29,7 +29,7 @@ const key:string = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'; //? Key de testeo
 
 const Toast = Swal.mixin({
   toast: true,
-  position: 'bottom-end',
+  position: 'top-end',
   showConfirmButton: false,
   timer: 3000,
   timerProgressBar: true,
@@ -59,7 +59,7 @@ export default function Formulary() {
 
     Toast.fire({
       icon: 'success',
-      title: 'Datos enviados!'
+      title: 'Recibimos tu consulta!'
     })
   };
 
@@ -206,7 +206,7 @@ export default function Formulary() {
         </ThemeProvider>
       
       <Box sx={{  m:'80px auto 0px auto' }}>
-        <Button content={'Enviar'} type={'submit'}>Submit</Button>
+        <Button content={'Enviar'} type={'submit'} href={''}>Submit</Button>
       </Box>
       
       </Box>

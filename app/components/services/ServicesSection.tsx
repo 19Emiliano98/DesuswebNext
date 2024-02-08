@@ -11,7 +11,7 @@ export default function ServicesSection () {
     <Box 
       sx={{ 
         display: 'flex', flexDirection: 'column', alignItems: 'center',
-        backgroundColor: '#FBC837', mt: { lg: 46, md: 34, sm: 31, xs: 24 }, pt: 4
+        mt: { lg: 10, md: 34, sm: 31, xs: 24 }, pt: 4
       }}
     >
       <Typography 
@@ -77,7 +77,7 @@ export default function ServicesSection () {
       <ServicesCards 
         content={ landingPage }
         right={ false }
-        backgroundColorCards={ '#8740E3' }
+        backgroundColorCards={ '#181818' }
         colorFontCards={ 'white' }
         iconCardTop={<ViewQuiltIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '34px', xs: '29px' } }}/>}
       />
@@ -85,8 +85,8 @@ export default function ServicesSection () {
       <ServicesCards 
         content={ desarrolloLibre }
         right={ true }
-        backgroundColorCards={ '#0F235E' }
-        colorFontCards={ 'white' }
+        backgroundColorCards={ 'white' }
+        colorFontCards={ 'black' }
         iconCardTop={<LocalGroceryStoreOutlinedIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '34px', xs: '29px' } }}/>}
       />
     </Box>

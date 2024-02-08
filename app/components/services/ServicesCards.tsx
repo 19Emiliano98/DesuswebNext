@@ -14,7 +14,7 @@ export default function ServicesCards ( param:any ) {
         display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', 
         right: { xl: '17%', lg: '8%', md: '46%', sm: '45.5%', xs: '39.5%' },
         width: { md: '85px', sm: '75px', xs: '75px'}, height: { md: '85px', sm: '75px', xs: '75px'}, 
-        borderRadius: '100%', border: '2px solid black', backgroundColor: '#FB9039',
+        borderRadius: '100%', border: '2px solid black', backgroundColor: '#B5F53F',
         filter: 'drop-shadow(10px 10px 15px rgba(5, 22, 34, 0.50)) drop-shadow(6px 6px 0px #191919)',
         mt: { lg: -5, sm: -6.2, xs: -5.7 }
       }}
@@ -29,7 +29,7 @@ export default function ServicesCards ( param:any ) {
         display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', 
         left: { xl: '17%', lg: '8%', md: '46%', sm: '44.6%', xs: '39.5%' }, mt: -5, 
         width: { md: '85px', sm: '75px', xs: '75px'}, height: { md: '85px', sm: '75px', xs: '75px'}, 
-        borderRadius: '100%', border: '2px solid black', backgroundColor: '#FB9039',
+        borderRadius: '100%', border: '2px solid black', backgroundColor: '#B5F53F',
         filter: 'drop-shadow(10px 10px 15px rgba(5, 22, 34, 0.50)) drop-shadow(6px 6px 0px #191919)'
       }}
     >
@@ -44,9 +44,9 @@ export default function ServicesCards ( param:any ) {
       <Card 
         sx={{ 
           display: 'flex', justifyContent: 'center', 
-          width: { lg: '1140px', md: '850px', sm: '700px', xs: '340px' }, 
-          borderRadius: '25px', backgroundColor: backgroundColorCards,
-          color: colorFontCards, boxShadow: "10px 10px 15px -5px #0516227f, 6px 6px 0 0 #191919"
+          width: { lg: '1140px', md: '850px', sm: '700px', xs: '340px' },
+          border: '4px solid #051622', borderRadius: '25px', backgroundColor: backgroundColorCards,
+          color: colorFontCards, boxShadow: "10px 10px 15px -5px rgba(5, 22, 34, 0.50), 6px 6px 0px 0px #191919"
         }}
       >
         <CardContent sx={{ width: { lg: '1000px', md: '780px', sm: '670px' } }}>
@@ -108,7 +108,7 @@ export default function ServicesCards ( param:any ) {
               { content.text }
             </Typography>
 
-            <Button content={'Consultar'} type={'button'}/>
+            <Button content={'Consultar'} type={'button'} href={'#contacto'}/>
           </Box>
         </CardContent>
       </Card>

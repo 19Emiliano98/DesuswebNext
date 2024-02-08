@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Typography, CardMedia } from "@mui/material";
+import { Box, Typography, CardMedia, Divider } from "@mui/material";
 import { styled } from '@mui/system';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import Button from '../../ui/Button';
@@ -22,13 +22,7 @@ export default function HomeSection() {
   });
 
   return (
-    <Box 
-      sx={{ 
-        backgroundColor: '#1C1C1C', color: '#FFFFFF', 
-        height: { lg: '1130px', md: '864px', sm: '726px', xs: '1005px' } ,
-        pt: 6
-      }}
-    >
+    <Box sx={{ color: '#000000', pt: 16 }}>
       <Box 
         sx={{ 
           display: 'flex', flexDirection: { sm: 'row-reverse', xs: 'column' },
@@ -37,8 +31,8 @@ export default function HomeSection() {
       >
         <CardMedia
           sx={{
-            width: { lg: '664px', md: '460px', sm: '380px', xs: '280px' }, 
-            height: { lg: '664px', md: '460px', sm: '380px', xs: '280px' }
+            width: { lg: '464px', md: '460px', sm: '380px', xs: '280px' }, 
+            height: { lg: '414px', md: '410px', sm: '330px', xs: '230px' }
           }}
           image='/presentationImage.png'
         />
@@ -47,7 +41,7 @@ export default function HomeSection() {
           sx={{ 
             display: 'flex', flexDirection: 'column',
             alignItems: 'center',
-            mr: { lg: 18, md: 5, sm: 4, xs: 0 }, mt: { sm: 0, xs: 4 }
+            mr: { lg: 35, md: 5, sm: 4, xs: 0 }, mt: { sm: 0, xs: 4 }
           }}
         >
           <Typography 
@@ -74,12 +68,15 @@ export default function HomeSection() {
             </Box>
           </Typography>
 
-          <Button content={'Contáctanos'} type={'button'}/>
+          <Button content={'Contáctanos'} type={'button'} href={'#contacto'}/>
         </Box>
       </Box>
       
+      <Divider sx={{ width: '1400px', mx: 'auto', mt: '200px', border: 'solid 1px black' }}/>
+
       {/* // !! Scroll */}
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: { sm: 5, xs: 12 } }}>
+      {/* // ?? se comento porque se elimino del diseño, no lo borro para que quede registrado por si se vuelve a usar */}
+      {/* <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: { sm: 5, xs: 12 } }}>
         <Typography sx={{ fontSize: { md: '23px', xs: '17px' } }} variant="body2">Scroll</Typography>
 				<AnimatedArrowDownwardIcon sx={{ color: '#FBC837' }}/>
         <Box 
@@ -90,7 +87,7 @@ export default function HomeSection() {
         >
             .
         </Box>
-			</Box>
+			</Box> */}
       
       <SkillsCards />
       

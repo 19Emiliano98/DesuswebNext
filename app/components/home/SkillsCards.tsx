@@ -2,14 +2,14 @@ import { Box, Card, Typography, CardContent, CardMedia } from "@mui/material";
 import { TypoH2 } from "../../globalStyles";
 
 const images = [ 
-  '/lenguages/reactImage.png',
-  '/lenguages/figmaImage.png',
-  '/lenguages/cssImage.png',
-  '/lenguages/htmlImage.png',
-  '/lenguages/dockerImage.png',
-  '/lenguages/jsImage.png',
-  '/lenguages/phpImage.png',
-  '/lenguages/sfImage.png'
+  '/lenguages/reactImage.jpg',
+  '/lenguages/figmaImage.jpg',
+  '/lenguages/cssImage.jpg',
+  '/lenguages/htmlImage.jpg',
+  '/lenguages/dockerImage.jpg',
+  '/lenguages/jsImage.jpg',
+  '/lenguages/phpImage.jpg',
+  '/lenguages/sfImage.jpg'
 ]
 
 export default function SkillsCards() {
@@ -24,9 +24,8 @@ export default function SkillsCards() {
             width: { lg: '200px', md: '138px', sm: '113px', xs: '95px' }, 
             height: { lg: '200px', md: '138px', sm: '113px', xs: '95px' },
             borderRadius: '25px',
-            backgroundColor: '#FBC837',
-            border: '4px solid black',
-            boxShadow: '8px 8px 0px #000000 , 10px 10px 15px -5px rgba(5, 22, 34, 0.5)', // tamanio del shadow alterado por emi
+            backgroundColor: '#191919',
+            border: '1px solid var(--Black, #181818)',
             m: 1.1
           }}
         >
@@ -34,7 +33,8 @@ export default function SkillsCards() {
             <CardMedia
               sx={{
                 width: { lg: '133px', md: '95px', sm: '76px', xs: '60px' },
-                height: { lg: '133px', md: '95px', sm: '76px', xs: '60px' }
+                height: { lg: '133px', md: '95px', sm: '76px', xs: '60px' },
+                borderRadius: '35px'
               }}
               component="img"
               image={x}
@@ -47,9 +47,7 @@ export default function SkillsCards() {
   );
 
   return(
-    <Box sx={{ 
-      display: 'flex', flexDirection: 'column', alignItems: 'center'
-      }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 12 }}>
       <Typography 
         sx={{ 
           fontFamily: TypoH2.fontFamily,
@@ -64,14 +62,14 @@ export default function SkillsCards() {
         Trabajamos con:
       </Typography>
 
-    <Box
-      sx={{ 
-        display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
-        width: { lg: '1200px', md: '800px', sm: '600px' }
-      }}
-    >
-      { card }
-    </Box>
+      <Box
+        sx={{ 
+          display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
+          width: { lg: '1200px', md: '800px', sm: '600px' }
+        }}
+      >
+        { card }
+      </Box>
     </Box>
   )
 }
