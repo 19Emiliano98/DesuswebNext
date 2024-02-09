@@ -38,7 +38,7 @@ export default function ServicesCards ( param:any ) {
   )
 
   return(
-    <Box sx={{ mb: 10 }}>
+    <Box sx={{ mb: { lg: 12, md: 15, xs: 13 } }}>
       { right ? cardRight : cardLeft }
 
       <Card 

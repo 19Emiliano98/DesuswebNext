@@ -22,7 +22,7 @@ export default function HomeSection() {
   });
 
   return (
-    <Box sx={{ color: '#000000', pt: 16 }}>
+    <Box sx={{ color: '#000000', pt: { sm: 16, xs: 9 } }}>
       <Box 
         sx={{ 
           display: 'flex', flexDirection: { sm: 'row-reverse', xs: 'column' },
@@ -31,8 +31,8 @@ export default function HomeSection() {
       >
         <CardMedia
           sx={{
-            width: { lg: '464px', md: '460px', sm: '380px', xs: '280px' }, 
-            height: { lg: '414px', md: '410px', sm: '330px', xs: '230px' }
+            width: { lg: '464px', md: '460px', sm: '350px', xs: '250px' }, 
+            height: { lg: '414px', md: '410px', sm: '310px', xs: '240px' }
           }}
           image='/presentationImage.png'
         />
@@ -41,7 +41,7 @@ export default function HomeSection() {
           sx={{ 
             display: 'flex', flexDirection: 'column',
             alignItems: 'center',
-            mr: { lg: 35, md: 5, sm: 4, xs: 0 }, mt: { sm: 0, xs: 4 }
+            mr: { lg: 35, md: 5, sm: 4, xs: 0 }, mt: { sm: 0, xs: 9 }
           }}
         >
           <Typography 
@@ -60,8 +60,8 @@ export default function HomeSection() {
             <Box 
               sx={{ 
                 position: 'absolute', 
-                mt: { lg: -9.8, md: -8.1, sm: -5.6, xs: -5 }, 
-                ml: { lg: 27, md: 23, sm: 16, xs: 14.6 }
+                mt: { lg: -9.8, md: -8.05, sm: -5.1, xs: -5 }, 
+                ml: { lg: 27, md: 22.6, sm: 14.5, xs: 14.6 }
               }}
             >
               <TitleAnimation />
@@ -72,7 +72,7 @@ export default function HomeSection() {
         </Box>
       </Box>
       
-      <Divider sx={{ width: '1400px', mx: 'auto', mt: '200px', border: 'solid 1px black' }}/>
+      <Divider sx={{ width: { xl: '1000px', lg: '1100px', md: '700px', sm: '500px', xs: '300px'}, mx: 'auto', mt: { sm: '200px', xs: '130px' }, border: 'solid 1px black' }}/>
 
       {/* // !! Scroll */}
       {/* // ?? se comento porque se elimino del diseño, no lo borro para que quede registrado por si se vuelve a usar */}

@@ -5,13 +5,14 @@ import ServicesCards from "./ServicesCards";
 import { tiendaOnline, landingPage, desarrolloLibre } from "./cardsContent";
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import ViewQuiltIcon from '@mui/icons-material/ViewQuilt';
+import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 
 export default function ServicesSection () {
   return (
     <Box 
       sx={{ 
         display: 'flex', flexDirection: 'column', alignItems: 'center',
-        mt: { lg: 10, md: 34, sm: 31, xs: 24 }, pt: 4
+        mt: { lg: 10, md: 8, sm: 8, xs: 5 }, pt: 4
       }}
     >
       <Typography 
@@ -30,7 +31,8 @@ export default function ServicesSection () {
       <Box 
         sx={{ 
           display: 'flex', alignItems: 'center',
-          mt: 3.5, mb: { sm: 8, xs: 12 }, ml: { sm: 0, xs: 1 }
+          mt: 2, mb: { lg: 8, md: 15, xs: 12 },
+          ml: { sm: 0, xs: 1 }
         }}
       >
         <VerifiedIcon sx={{ color: '#067ACC', mr: 1 }} fontSize="large"/>
@@ -87,7 +89,7 @@ export default function ServicesSection () {
         right={ true }
         backgroundColorCards={ 'white' }
         colorFontCards={ 'black' }
-        iconCardTop={<LocalGroceryStoreOutlinedIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '34px', xs: '29px' } }}/>}
+        iconCardTop={<DeveloperModeIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '34px', xs: '29px' } }}/>}
       />
     </Box>
   )

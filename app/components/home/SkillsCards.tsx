@@ -15,9 +15,7 @@ const images = [
 export default function SkillsCards() {
   const card = (
     images.map( ( x, index ) => 
-      <Box 
-        key={index}
-      >
+      <Box key={index}>
         <Card
           sx={{
             display: 'flex', justifyContent: 'center', alignItems: { md: 'center', xs: 'normal' },
@@ -47,7 +45,7 @@ export default function SkillsCards() {
   );
 
   return(
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 12 }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: { sm: 11, xs: 8 } }}>
       <Typography 
         sx={{ 
           fontFamily: TypoH2.fontFamily,
@@ -65,7 +63,8 @@ export default function SkillsCards() {
       <Box
         sx={{ 
           display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
-          width: { lg: '1200px', md: '800px', sm: '600px' }
+          width: { lg: '1200px', md: '800px', sm: '600px' },
+          mt: { xl: 1, lg: 3, md: 4, sm: 2, xs: 2 }
         }}
       >
         { card }
