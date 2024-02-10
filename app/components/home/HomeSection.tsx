@@ -22,7 +22,7 @@ export default function HomeSection() {
   });
 
   return (
-    <Box sx={{ color: '#000000', pt: { sm: 16, xs: 9 } }}>
+    <Box id='home' sx={{ color: '#000000', pt: { sm: 16, xs: 9 } }}>
       <Box 
         sx={{ 
           display: 'flex', flexDirection: { sm: 'row-reverse', xs: 'column' },

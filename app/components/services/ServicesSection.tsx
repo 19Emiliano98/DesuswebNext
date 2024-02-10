@@ -10,6 +10,7 @@ import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
 export default function ServicesSection () {
   return (
     <Box 
+      id='servicios'
       sx={{ 
         display: 'flex', flexDirection: 'column', alignItems: 'center',
         mt: { lg: 10, md: 8, sm: 8, xs: 5 }, pt: 4

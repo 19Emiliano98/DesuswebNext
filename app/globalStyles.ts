@@ -29,7 +29,7 @@ export const TypoH3 = {
 
 export const TypoBody1 = {
   fontFamily: redHatDisplay,
-  fontSize: { md: '22px', xs: '16px' },
+  fontSize: { md: '22px', xs: '17px' },
   fontStyle: 'normal',
   fontWeight: 500,
   lineHeight: '170%'

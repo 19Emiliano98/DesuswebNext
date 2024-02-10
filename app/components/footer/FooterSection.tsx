@@ -7,8 +7,9 @@ export default function FooterSection (){
   return(
     <Box
       sx={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center',
-        background: "#051622", color: 'white', py: 6
+        display: 'flex', flexDirection: { sm: 'row', xs: 'column'},
+        justifyContent: 'center', alignItems: 'center',
+        background: "#181818", color: 'white', py: 6
       }}
     >
       <Typography
@@ -18,15 +19,17 @@ export default function FooterSection (){
           fontStyle: TypoBody1.fontStyle,
           fontWeight: TypoBody1.fontWeight,
           lineHeight: TypoBody1.lineHeight,
-          mr: 2.4
+          
         }}
       >
         © 2023 by DesusWeb www.desusweb.com
       </Typography>
       
-      <FacebookIcon fontSize="inherit" sx={{ mx: 0.6, fontSize: '50px' }}/>
-      
-      <InstagramIcon fontSize="inherit" sx={{ mx: 0.6, fontSize: '50px' }}/>
+      <Box sx={{ display: 'flex' }}>
+        <FacebookIcon fontSize="inherit" sx={{ mx: 0.6, fontSize: { md: '50px', sm: '40px', xs: '30px' } }}/>
+        
+        <InstagramIcon fontSize="inherit" sx={{ mx: 0.6, fontSize: { md: '50px', sm: '40px', xs: '30px' } }}/>
+      </Box>
     </Box>
   )
 }
