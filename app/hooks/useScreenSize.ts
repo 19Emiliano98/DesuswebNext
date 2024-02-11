@@ -1,6 +1,6 @@
-'use client'
-
 import { useState, useEffect } from "react";
+
+if (typeof window === "undefined") { /* we're on the server */ }
 
 const useScreenSize = () => {
   const [width, setWidth] = useState(window.innerWidth);
