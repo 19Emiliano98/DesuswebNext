@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { useState } from 'react';
+import useScreenSize from '../hooks/useScreenSize';
 import { Box, Toolbar, MenuItem, Link, CardMedia, Tooltip, IconButton, Menu, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { spaceGrotesk } from './fonts';
@@ -105,7 +106,7 @@ export default function Navbar () {
   )
 
   let ShowAppBar
-  if( screen.width > 768){
+  if( useScreenSize().width > 768){
     ShowAppBar = renderNavbar
   }else{
     ShowAppBar = renderMobilebar
