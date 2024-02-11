@@ -17,9 +17,10 @@ export default function Login() {
   return (
     <Box
       sx={{
-        display: 'flex', alignItems: 'center', flexDirection: 'column',
+        display: 'flex', flexDirection: 'column', alignItems: 'center',
+        my: '10.71vh',
         '& .MuiTextField-root': {
-          width: '493.573px'
+          width: { sm: '493.573px', xs: '300px' }
         }
       }}
     >
@@ -40,7 +41,7 @@ export default function Login() {
         sx={{
           display: 'flex', alignItems: 'center',
           flexDirection: 'column', textAlign: 'center',
-          width: '564px',
+          width: { sm: '564px', xs: '345px' },
           height: '432px',
           flexShrink: 0,
           borderRadius: '25px',

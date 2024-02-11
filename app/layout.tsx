@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body style={{ margin: '0px', scrollbarColor: 'red' }}>
+      <body style={{ margin: '0px' }}>
         <Navbar />
 
         {children}

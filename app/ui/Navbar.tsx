@@ -22,16 +22,19 @@ export default function Navbar () {
   let justifyContentOfNavbar:string
   let marginIconNavbar:object
   let marginLinksNavbar:object
+  let transformStyleData:object
   if( usePathname() == '/login' ){
     isLogin = true
     justifyContentOfNavbar = 'center';
     marginIconNavbar = { xs: 0 }
     marginLinksNavbar = { xs: 0 }
+    transformStyleData = { lg: 'translate( -25px , -11px )', md: 'translate( -25px , -10px )', sm: 'translate( -26px , -11px )', xs: 'translate( -18px , -9px )' }
   }else{
     isLogin = false
     justifyContentOfNavbar = 'space-between';
-    marginIconNavbar = { lg: 20, md: 0, sm: 0 }
-    marginLinksNavbar = { lg: '280px', md: 5, sm: 1 }
+    marginIconNavbar = { lg: 15, md: 8, sm: 6 }
+    marginLinksNavbar = { lg: '135px', md: 9, sm: 7 }
+    transformStyleData = { lg: 'translate( -146px , -10px )', md: 'translate( -90px , -10px )', sm: 'translate( -74px , -10px )', xs: 'translate( -18px , -9px )' }
   }
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -85,7 +88,16 @@ export default function Navbar () {
         >
           {linkBar.map((x) => (
             <MenuItem key={ x.title } onClick={ handleCloseUserMenu }>
-              <Typography textAlign="center">{ x.title }</Typography>
+              <Link 
+              href={ x.goTo }
+              sx={{
+                textDecoration: 'none',
+                fontSize: { sm: '24px', xs: '13px' },
+                color: 'black', fontWeight: 600, fontFamily: `${spaceGrotesk} antialiased`
+              }}
+              >
+                { x.title }
+              </Link>
             </MenuItem>
           ))}
         </Menu>
@@ -107,13 +119,23 @@ export default function Navbar () {
           backgroundColor: '#181818', height: '90px'
         }}
       >
-        <CardMedia
-          sx={{ 
-            width: { sm: '128px', xs: '70px' }, height: { sm: '94px', xs: '60px'},
+        <Box
+          sx={{
+            width: { sm: 75, xs: 66 }, height: { sm: 75, xs: 66 },
+            borderRadius: '50px',
+            backgroundColor: '#3F3F3F',
             ml: marginIconNavbar
           }}
-          image="/dwLogo.png"
-        />
+        >
+          <CardMedia
+            sx={{
+              width: { sm: '128px', xs: '105px' }, height: { sm: '94px', xs: '80px'},
+              ml: marginIconNavbar, 
+              transform: transformStyleData
+            }}
+            image="/rocket.png"
+          />
+        </Box>
 
         <Box sx={{ display: 'flex', mr: marginLinksNavbar }}>
           { isLogin ? <></> : ShowAppBar }
