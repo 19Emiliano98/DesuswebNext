@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useScreenSize from '../hooks/useScreenSize';
 import { Box, Toolbar, MenuItem, Link, CardMedia, Tooltip, IconButton, Menu, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -9,6 +9,7 @@ import { spaceGrotesk } from './fonts';
 
 export default function Navbar () {
   const [ anchorElUser, setAnchorElUser ] = useState< null | HTMLElement >(null);
+  const [ isDesktop, setIsDesktop ] = useState<boolean>(true);
   interface linkbarProps {
     title: string;
     goTo: string;
@@ -104,12 +105,35 @@ export default function Navbar () {
         </Menu>
     </>
   )
+  
+  const checkWindowSize = () => {
+    let windowWith:any;
 
-  let ShowAppBar
-  if( useScreenSize().width > 768){
-    ShowAppBar = renderNavbar
+    if( typeof window !== 'undefined' ){
+      windowWith = window.innerWidth;
+    }
+    if( windowWith > 768 ){
+      setIsDesktop(true);
+    }else{
+      setIsDesktop(false)
+    }
+  }
+
+  let showAppBar;
+  if( isDesktop == true ){
+    showAppBar = renderNavbar
   }else{
-    ShowAppBar = renderMobilebar
+    showAppBar = renderMobilebar
+  }
+
+  // logica cuando el usuario carga la primera vez
+  useEffect(() => {
+    checkWindowSize();
+  }, [isDesktop]);
+  
+  // cuando el usuario cambia el tamaño de la pantalla
+  if(typeof window !== 'undefined'){
+    window.addEventListener('resize', checkWindowSize)
   }
 
   return (
@@ -139,7 +163,7 @@ export default function Navbar () {
         </Box>
 
         <Box sx={{ display: 'flex', mr: marginLinksNavbar }}>
-          { isLogin ? <></> : ShowAppBar }
+          { isLogin ? <></> : showAppBar }
         </Box>
       </Toolbar>
     </Box>
