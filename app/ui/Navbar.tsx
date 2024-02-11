@@ -158,7 +158,7 @@ export default function Navbar () {
               ml: marginIconNavbar, 
               transform: transformStyleData
             }}
-            image="/rocket.png"
+            image="/Rocket.png"
           />
         </Box>
 
