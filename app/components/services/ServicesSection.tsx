@@ -40,7 +40,7 @@ export default function ServicesSection () {
 
         <Typography 
           sx={{
-            width: { sm: 'auto', xs: 260 },
+            width: { sm: 'auto', xs: 261.4 },
             fontFamily: TypoBody1.fontFamily,
             fontSize: TypoBody1.fontSize,
             fontStyle: TypoBody1.fontStyle,
