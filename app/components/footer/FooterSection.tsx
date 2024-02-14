@@ -18,7 +18,8 @@ export default function FooterSection (){
           fontSize: TypoBody1.fontSize,
           fontStyle: TypoBody1.fontStyle,
           fontWeight: TypoBody1.fontWeight,
-          lineHeight: TypoBody1.lineHeight
+          lineHeight: TypoBody1.lineHeight,
+          mr: 2
         }}
       >
         © 2023 by DesusWeb www.desusweb.com

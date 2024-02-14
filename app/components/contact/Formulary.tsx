@@ -24,8 +24,6 @@ const theme:object = createTheme({
 });
 
 const url:string = 'https://desusweb.com/api/mail/';
-const key:string = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'; //? Key de testeo para modo local
-//const key = '6Le8M9AoAAAAAHpXqz7JVdZyWB824wDhgn2pQF56';
 
 const Toast = Swal.mixin({
   toast: true,
@@ -55,7 +53,13 @@ export default function Formulary() {
   ));
   
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+    fetch( url , {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
 
     Toast.fire({
       icon: 'success',

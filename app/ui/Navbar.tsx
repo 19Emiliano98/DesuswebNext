@@ -2,8 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react';
-import useScreenSize from '../hooks/useScreenSize';
-import { Box, Toolbar, MenuItem, Link, CardMedia, Tooltip, IconButton, Menu, Typography } from '@mui/material';
+import { Box, Toolbar, MenuItem, Link, CardMedia, Tooltip, IconButton, Menu } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { spaceGrotesk } from './fonts';
 
