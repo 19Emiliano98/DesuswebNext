@@ -61,7 +61,7 @@ export default function HomeSection() {
               sx={{ 
                 position: 'absolute', 
                 mt: { lg: -9.8, md: -8.05, sm: -5.1, xs: -5 }, 
-                ml: { lg: 27, md: 22.6, sm: 14.5, xs: 14.6 }
+                ml: { lg: 27, md: 22.6, sm: 14.5, xs: 13.55 }
               }}
             >
               <TitleAnimation />

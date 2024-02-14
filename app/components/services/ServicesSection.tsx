@@ -33,7 +33,7 @@ export default function ServicesSection () {
         sx={{ 
           display: 'flex', alignItems: 'center',
           mt: 2, mb: { lg: 8, md: 15, xs: 12 },
-          ml: { sm: 0, xs: -2 }
+          ml: { sm: 0, xs: 2 }
         }}
       >
         <VerifiedIcon sx={{ color: '#067ACC', mr: 1 }} fontSize="large"/>
@@ -56,13 +56,13 @@ export default function ServicesSection () {
           sx={{
             position: { sm: 'static', xs: 'absolute' },
             fontFamily: TypoBody1.fontFamily,
-            fontSize: TypoBody1.fontSize,
+            fontSize: { md: '22px', xs: '22px' },
             fontStyle: TypoBody1.fontStyle,
             fontWeight: 700,
             lineHeight: TypoBody1.lineHeight,
             color: '#067ACC', 
-            mt: { sm: 0, xs: 7.35 },
-            ml: { sm: 0.8, xs: 10.6 }
+            mt: { sm: 0, xs: 6.9 },
+            ml: { sm: 0.8, xs: 21.1 }
           }}
           variant="body1"
         >
