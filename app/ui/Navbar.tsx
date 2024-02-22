@@ -24,7 +24,8 @@ export default function Navbar () {
   let marginIconNavbar:object
   let marginLinksNavbar:object
   let transformStyleData:object
-  if( usePathname() == '/login' || usePathname() == '/promotion' ){
+  const actualPathName:string = usePathname();
+  if( actualPathName == '/login' || actualPathName == '/promotion' ){
     isLogin = true
     justifyContentOfNavbar = 'center';
     marginIconNavbar = { xs: 0 }
