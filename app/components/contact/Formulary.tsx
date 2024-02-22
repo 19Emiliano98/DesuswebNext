@@ -20,7 +20,7 @@ type Inputs = {
 const theme:object = createTheme({
   palette: {
     primary: { main: grey[900] }
-  },
+  }
 });
 
 const url:string = 'https://desusweb.com/api/mail/';
@@ -209,7 +209,7 @@ export default function Formulary() {
           }
         </ThemeProvider>
       
-      <Box sx={{  m:'80px auto 0px auto' }}>
+      <Box sx={{ m:'80px auto 0px auto' }}>
         <Button content={'Enviar'} type={'submit'} href={''}>Submit</Button>
       </Box>
       

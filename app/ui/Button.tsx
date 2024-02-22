@@ -1,5 +1,5 @@
 import { Box, Button } from "@mui/material";
-import { spaceGrotesk } from "./fonts";
+import { fontSpaceGrotesk } from "./fonts";
 
 export default function ButtonStyle ( param:any ) {
   return(
@@ -14,7 +14,7 @@ export default function ButtonStyle ( param:any ) {
           boxShadow: '4px 4px 6px 2px rgba(44, 42, 42, 0.25)',
           textTransform: 'none',
           color: 'black',
-          fontFamily: spaceGrotesk,
+          fontFamily: fontSpaceGrotesk,
           fontSize: '25px',
           fontWeight: 600,
           '&:hover': {

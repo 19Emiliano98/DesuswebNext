@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react';
 import { Box, Toolbar, MenuItem, Link, CardMedia, Tooltip, IconButton, Menu } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { spaceGrotesk } from './fonts';
+import { fontSpaceGrotesk } from './fonts';
 
 export default function Navbar () {
   const [ anchorElUser, setAnchorElUser ] = useState< null | HTMLElement >(null);
@@ -24,7 +24,7 @@ export default function Navbar () {
   let marginIconNavbar:object
   let marginLinksNavbar:object
   let transformStyleData:object
-  if( usePathname() == '/login' ){
+  if( usePathname() == '/login' || usePathname() == '/promotion' ){
     isLogin = true
     justifyContentOfNavbar = 'center';
     marginIconNavbar = { xs: 0 }
@@ -54,7 +54,7 @@ export default function Navbar () {
           sx={{
             textDecoration: 'none',
             fontSize: { sm: '24px', xs: '13px' },
-            color: '#F5F5F5', fontWeight: 600, fontFamily: `${spaceGrotesk} antialiased`
+            color: '#F5F5F5', fontWeight: 600, fontFamily: `${fontSpaceGrotesk} antialiased`
           }}
         >
           {x.title}
@@ -94,7 +94,7 @@ export default function Navbar () {
               sx={{
                 textDecoration: 'none',
                 fontSize: { sm: '24px', xs: '13px' },
-                color: 'black', fontWeight: 600, fontFamily: `${spaceGrotesk} antialiased`
+                color: 'black', fontWeight: 600, fontFamily: `${fontSpaceGrotesk} antialiased`
               }}
               >
                 { x.title }
