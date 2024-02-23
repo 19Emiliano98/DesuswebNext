@@ -1,6 +1,7 @@
 'use client'
 
 import { Box, TextField, Typography, ThemeProvider, createTheme } from '@mui/material';
+import { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Swal from 'sweetalert2';
@@ -37,15 +38,27 @@ const Toast = Swal.mixin({
   }
 })
 
+const formHeight:number = 17
+const formMargin:string = '-2px'
+
 export default function Formulary() {
   const {
     register,
     handleSubmit,
+    reset,
+    formState,
     formState: { errors },
+    formState: { isSubmitSuccessful },
   } = useForm<Inputs>({
     resolver: zodResolver(userSchema),
   });
   
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset({ name: "", surname: "", email: "", plan: "", comment: "" })
+    }
+  }, [formState, register, reset])
+
   const plansOptions = Object.entries(mappedPlans).map(([key, value]) => (
     <option value={key} key={key}>
       { value }
@@ -53,13 +66,15 @@ export default function Formulary() {
   ));
   
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    fetch( url , {
+    /* fetch( url , {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json'
         }
-      });
+      }); */
+
+    console.log(data);
 
     Toast.fire({
       icon: 'success',
@@ -95,8 +110,18 @@ export default function Formulary() {
             label='Nombre'
             {...register("name")}
             error={ errors.name?.message ? true : false }
-            inputProps={{ color: "secondary" }}
+            inputProps={{
+              style: {
+                height: formHeight
+              },
+            }}
+            InputLabelProps={{
+              style: {
+                marginTop: formMargin
+              },
+            }}
           />
+          
           { errors.name?.message && 
           <Typography 
             variant='body2' 
@@ -118,8 +143,19 @@ export default function Formulary() {
             label='Apellido'
             {...register("surname")}
             error={ errors.surname?.message ? true : false }
+            inputProps={{
+              style: {
+                height: formHeight
+              },
+            }}
+            InputLabelProps={{
+              style: {
+                marginTop: formMargin
+              },
+            }}
           />
           { errors.surname?.message && 
+          
             <Typography 
               variant='body2' 
               sx={{ 
@@ -141,8 +177,19 @@ export default function Formulary() {
             label='E-mail'
             {...register("email")}
             error={ errors.email?.message ? true : false }
+            inputProps={{
+              style: {
+                height: formHeight
+              },
+            }}
+            InputLabelProps={{
+              style: {
+                marginTop: formMargin
+              },
+            }}
           />
           { errors.email?.message && 
+          
             <Typography 
               variant='body2' 
               sx={{ 
@@ -166,6 +213,17 @@ export default function Formulary() {
               native: true
             }}
             {...register("plan")}
+            inputProps={{
+              style: {
+                height: formHeight
+              },
+            }}
+            InputLabelProps={{
+              style: {
+                marginTop: formMargin
+              },
+            }}
+            
           >
             {plansOptions}
           </TextField>

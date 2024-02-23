@@ -8,7 +8,7 @@ export default function ButtonStyle ( param:any ) {
         type= { param.type }
         href= { param.href }
         sx={{
-          width: { lg: '400px', md: '355px', sm: '260px', xs: '245px' }, height: { md: '70px', sm: '62px', xs: '60px' },
+          width: { lg: '400px', md: '355px', sm: '260px', xs: '225px' }, height: { md: '70px', sm: '62px', xs: '54px' },
           border: '1px solid var(--Black, #181818)', borderRadius: '15px',
           backgroundColor: 'var(--Primario, #B5F53F)',
           boxShadow: '4px 4px 6px 2px rgba(44, 42, 42, 0.25)',

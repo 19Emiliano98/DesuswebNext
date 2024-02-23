@@ -1,6 +1,7 @@
 'use client'
 
 import { Box, TextField, ThemeProvider, Typography, createTheme } from "@mui/material";
+import { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formPromoSchema } from './formPromoSchema';
@@ -36,15 +37,27 @@ const Toast = Swal.mixin({
   }
 })
 
+const formHeight:number = 17
+const formMargin:string = '-2px'
+
 export default function FormPromo() {
   
   const {
     register,
     handleSubmit,
+    reset,
+    formState,
     formState: { errors },
+    formState: { isSubmitSuccessful },
   } = useForm<Inputs>({
     resolver: zodResolver( formPromoSchema ),
   });
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset({ name: "", surname: "", email: "", phone: "", website: "" })
+    }
+  }, [formState, register, reset])
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     Toast.fire({
@@ -61,7 +74,7 @@ export default function FormPromo() {
       onSubmit={handleSubmit(onSubmit)}
       sx={{
         display: 'flex', flexDirection: 'column',
-        width: { xl: 870, lg: 750, md: 680, sm: 520, xs: 300 },
+        width: { xl: 780, lg: 750, md: 680, sm: 520, xs: 250 },
         mt: '37px',
         '& .MuiTextField-root': { my: '11px' }
       }}
@@ -73,6 +86,16 @@ export default function FormPromo() {
           type='text'
           label='Nombre'
           {...register("name")}
+          inputProps={{
+            style: {
+              height: formHeight
+            },
+          }}
+          InputLabelProps={{
+            style: {
+              marginTop: formMargin
+            },
+          }}
         />
         { errors.name?.message && 
         <Typography 
@@ -93,6 +116,16 @@ export default function FormPromo() {
           id='surname'
           type='text'
           label='Apellido'
+          inputProps={{
+            style: {
+              height: formHeight
+            },
+          }}
+          InputLabelProps={{
+            style: {
+              marginTop: formMargin
+            },
+          }}
           {...register("surname")}
         />
         { errors.surname?.message && 
@@ -114,6 +147,16 @@ export default function FormPromo() {
           id='email'
           type='email'
           label='E-mail'
+          inputProps={{
+            style: {
+              height: formHeight
+            },
+          }}
+          InputLabelProps={{
+            style: {
+              marginTop: formMargin
+            },
+          }}
           {...register("email")}
         />
         { errors.email?.message && 
@@ -135,6 +178,16 @@ export default function FormPromo() {
           id='phone'
           type='text'
           label='Teléfono'
+          inputProps={{
+            style: {
+              height: formHeight
+            },
+          }}
+          InputLabelProps={{
+            style: {
+              marginTop: formMargin
+            },
+          }}
           {...register("phone")}
         />
         { errors.phone?.message && 
@@ -156,6 +209,16 @@ export default function FormPromo() {
           type='text'
           label='Sitio web actual (si tienes)'
           {...register("website")}
+          inputProps={{
+            style: {
+              height: formHeight
+            },
+          }}
+          InputLabelProps={{
+            style: {
+              marginTop: formMargin
+            },
+          }}
         />
       </ThemeProvider>
 
