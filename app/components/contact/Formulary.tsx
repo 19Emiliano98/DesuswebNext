@@ -268,7 +268,7 @@ export default function Formulary() {
         </ThemeProvider>
       
       <Box sx={{ m:'80px auto 0px auto' }}>
-        <Button content={'Enviar'} type={'submit'} href={''}>Submit</Button>
+        <Button content={'Enviar'} type={'submit'} href={''} backColor={'var(--Primario, #B5F53F)'}>Submit</Button>
       </Box>
       
       </Box>

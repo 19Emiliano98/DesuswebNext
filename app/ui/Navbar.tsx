@@ -35,7 +35,7 @@ export default function Navbar () {
     isLogin = false
     justifyContentOfNavbar = 'space-between';
     marginIconNavbar = { lg: 15, md: 8, sm: 6 }
-    marginLinksNavbar = { lg: '135px', md: 9, sm: 7 }
+    marginLinksNavbar = { lg: 30, md: 9, sm: 7 }
     transformStyleData = { lg: 'translate( -146px , -10px )', md: 'translate( -90px , -10px )', sm: 'translate( -74px , -10px )', xs: 'translate( -18px , -9px )' }
   }
 
@@ -49,13 +49,13 @@ export default function Navbar () {
 
   const renderNavbar = (
     linkBar.map( x => (
-      <MenuItem disableGutters dense key={x.title} sx={{ mx: 0.8, ':selected':{ backgroundColor: 'red' } }}>
+      <MenuItem disableGutters dense key={x.title} sx={{ mx: 1, ':selected':{ backgroundColor: 'red' } }}>
         <Link 
           href={ x.goTo }
           sx={{
             textDecoration: 'none',
             fontSize: { sm: '24px', xs: '13px' },
-            color: '#F5F5F5', fontWeight: 600, fontFamily: `${fontSpaceGrotesk} antialiased`
+            color: '#F5F5F5', fontWeight: 500, fontFamily: `${fontSpaceGrotesk} antialiased`
           }}
         >
           {x.title}

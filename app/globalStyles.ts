@@ -14,7 +14,7 @@ export const TypoH2 = {
   fontFamily: spaceGrotesk,
   fontSize: {md: '40px', xs: '32px'},
   fontStyle: 'normal',
-  fontWeight: 500,
+  fontWeight: 600,
   lineHeight: '150%'
 }
 

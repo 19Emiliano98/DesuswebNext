@@ -2,14 +2,14 @@ import { Box, Card, Typography, CardContent, CardMedia } from "@mui/material";
 import { TypoH2 } from "../../globalStyles";
 
 const images = [ 
-  '/lenguages/reactImage.jpg',
-  '/lenguages/figmaImage.jpg',
-  '/lenguages/cssImage.jpg',
-  '/lenguages/htmlImage.jpg',
-  '/lenguages/dockerImage.jpg',
-  '/lenguages/jsImage.jpg',
-  '/lenguages/phpImage.jpg',
-  '/lenguages/sfImage.jpg'
+  { src: '/lenguages/reactImage.jpg', alt: 'React'},
+  { src: '/lenguages/figmaImage.jpg', alt: 'Figma'},
+  { src: '/lenguages/cssImage.jpg', alt: 'CSS'},
+  { src: '/lenguages/htmlImage.jpg', alt: 'HTML'},
+  { src: '/lenguages/dockerImage.jpg', alt: 'Docker'},
+  { src: '/lenguages/jsImage.jpg', alt: 'Javascript'},
+  { src: '/lenguages/phpImage.jpg', alt: 'PHP'},
+  { src: '/lenguages/sfImage.jpg', alt: 'Simphony'}
 ]
 
 export default function SkillsCards() {
@@ -19,8 +19,8 @@ export default function SkillsCards() {
         <Card
           sx={{
             display: 'flex', justifyContent: 'center', alignItems: { md: 'center', xs: 'normal' },
-            width: { lg: '200px', md: '138px', sm: '113px', xs: '95px' }, 
-            height: { lg: '200px', md: '138px', sm: '113px', xs: '95px' },
+            width: { lg: '180px', md: '138px', sm: '113px', xs: '95px' }, 
+            height: { lg: '180px', md: '138px', sm: '113px', xs: '95px' },
             borderRadius: '25px',
             backgroundColor: '#191919',
             border: '1px solid var(--Black, #181818)',
@@ -30,14 +30,14 @@ export default function SkillsCards() {
           <CardContent>
             <CardMedia
               sx={{
-                width: { lg: '133px', md: '95px', sm: '76px', xs: '60px' },
-                height: { lg: '133px', md: '95px', sm: '76px', xs: '60px' },
+                width: { lg: '115px', md: '95px', sm: '76px', xs: '60px' },
+                height: { lg: '115px', md: '95px', sm: '76px', xs: '60px' },
                 borderRadius: '35px'
               }}
               component="img"
-              image={x}
-              alt="React"
-              />
+              image={x.src}
+              alt={x.alt}
+            />
           </CardContent>
         </Card>
       </Box>
@@ -63,7 +63,7 @@ export default function SkillsCards() {
       <Box
         sx={{ 
           display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
-          width: { lg: '1200px', md: '800px', sm: '600px' },
+          width: { lg: '1000px', md: '800px', sm: '600px' },
           mt: { xl: 1, lg: 3, md: 4, sm: 2, xs: 2 }
         }}
       >

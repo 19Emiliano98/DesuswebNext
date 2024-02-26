@@ -108,7 +108,7 @@ export default function ServicesCards ( param:any ) {
               { content.text }
             </Typography>
 
-            <Button content={'Consultar'} type={'button'} href={'#contacto'}/>
+            <Button content={'Consultar'} type={'button'} href={'#contacto'} backColor={'var(--Primario, #B5F53F)'}/>
           </Box>
         </CardContent>
       </Card>

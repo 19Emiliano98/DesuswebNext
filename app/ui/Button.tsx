@@ -10,7 +10,7 @@ export default function ButtonStyle ( param:any ) {
         sx={{
           width: { lg: '400px', md: '355px', sm: '260px', xs: '225px' }, height: { md: '70px', sm: '62px', xs: '54px' },
           border: '1px solid var(--Black, #181818)', borderRadius: '15px',
-          backgroundColor: 'var(--Primario, #B5F53F)',
+          backgroundColor: param.backColor,
           boxShadow: '4px 4px 6px 2px rgba(44, 42, 42, 0.25)',
           textTransform: 'none',
           color: 'black',

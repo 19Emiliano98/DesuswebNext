@@ -5,7 +5,7 @@ import { styled } from '@mui/system';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import Button from '../../ui/Button';
 import { TypoH1 } from "../../globalStyles";
-import TitleAnimation from "./TitleAnimation";
+// import TitleAnimation from "./TitleAnimation";
 import SkillsCards from "./SkillsCards";
 
 export default function HomeSection() {
@@ -46,7 +46,8 @@ export default function HomeSection() {
         >
           <Typography 
             sx={{
-              width: { md: 400, sm: 250, xs: 240 },
+              width: { md: 700, sm: 250, xs: 240 },
+              textAlign: 'center',
               fontFamily: TypoH1.fontFamily,
               fontSize: TypoH1.fontSize,
               fontStyle: TypoH1.fontStyle,
@@ -56,8 +57,25 @@ export default function HomeSection() {
             }} 
             variant="h1"
           >
-            Bienvenid@ a tu próximo 
-            <Box 
+            Bienvenid@ a tu próximo
+            <Box component='div' sx={{ ml: 16 }}>
+              desarrollo
+            </Box>
+            <Box component='div' sx={{ position: 'absolute', mt: -29, ml: 1, zIndex: -1 }}>
+              <CardMedia
+                sx={{ width: '348px', height: '175px' }}
+                image='/HomeCloudImage/Cloud1.png'
+              />
+              <CardMedia
+                sx={{ 
+                  position: 'absolute',
+                  width: '356px', height: '134px',
+                  ml: 29, mt: -5
+                }}
+                image='/HomeCloudImage/Cloud2.png'
+              />
+            </Box>
+            {/* <Box 
               sx={{ 
                 position: 'absolute', 
                 mt: { lg: -9.8, md: -8.05, sm: -5.1, xs: -5 }, 
@@ -65,10 +83,10 @@ export default function HomeSection() {
               }}
             >
               <TitleAnimation />
-            </Box>
+            </Box> */}
           </Typography>
 
-          <Button content={'Contáctanos'} type={'button'} href={'#contacto'}/>
+          <Button content={'Contáctanos'} type={'button'} href={'#contacto'} backColor={'white'}/>
         </Box>
       </Box>
       
