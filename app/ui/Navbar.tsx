@@ -54,7 +54,7 @@ export default function Navbar () {
           href={ x.goTo }
           sx={{
             textDecoration: 'none',
-            fontSize: { sm: '24px', xs: '13px' },
+            fontSize: { lg: '25px', md: '19px', xs: '13px' },
             color: '#F5F5F5', fontWeight: 500, fontFamily: `${fontSpaceGrotesk} antialiased`
           }}
         >

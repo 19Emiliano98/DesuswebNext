@@ -227,7 +227,7 @@ export default function FormPromo() {
         sx={{ fontSize: '16px', fontFamily: fontInter, fontWeight: 600, mt: '24px' }}
       >* Campos obligatorios</Typography>
 
-      <Box sx={{ mx: 'auto', mt: '57px', mb: '63px' }}><Button content={'Enviar'} type={'submit'} href={''}>Submit</Button></Box>
+      <Box sx={{ mx: 'auto', mt: '57px', mb: '63px' }}><Button content={'Enviar'} type={'submit'} href={''} backColor={'var(--Primario, #B5F53F)'}>Submit</Button></Box>
     </Box>
   )
 }

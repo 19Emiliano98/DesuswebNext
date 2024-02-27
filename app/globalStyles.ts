@@ -4,7 +4,7 @@ const redHatDisplay = Red_Hat_Display({ subsets: ["latin"], weight: [ '500', '70
 
 export const TypoH1 = {
   fontFamily: spaceGrotesk,
-  fontSize: { lg: '52px', md: '43px', xs: '27px' },
+  fontSize: { lg: '52px', md: '38px', xs: '24px' },
   fontStyle: 'normal',
   fontWeight: 700,
   lineHeight: '150%'
