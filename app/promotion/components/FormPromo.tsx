@@ -37,8 +37,7 @@ const Toast = Swal.mixin({
   }
 })
 
-const formHeight:number = 17
-const formMargin:string = '-2px'
+const url:string = 'https://desusweb.com/api/promocion';
 
 export default function FormPromo() {
   
@@ -60,12 +59,18 @@ export default function FormPromo() {
   }, [formState, register, reset])
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
+    fetch( url , {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    
     Toast.fire({
       icon: 'success',
       title: 'Recibimos tus datos!!'
-    })
-
-    console.log(data);
+    });
   }
 
   return(
@@ -81,21 +86,12 @@ export default function FormPromo() {
     >
       <ThemeProvider theme={theme}>
         <TextField
-          required
+          InputLabelProps={{ shrink: true }}
           id='name'
           type='text'
-          label='Nombre'
+          label='Nombre *'
           {...register("name")}
-          inputProps={{
-            style: {
-              height: formHeight
-            },
-          }}
-          InputLabelProps={{
-            style: {
-              marginTop: formMargin
-            },
-          }}
+          error={ errors.name?.message ? true : false }
         />
         { errors.name?.message && 
         <Typography 
@@ -112,20 +108,11 @@ export default function FormPromo() {
         </Typography>}
 
         <TextField
-          required
+          InputLabelProps={{ shrink: true }}
           id='surname'
           type='text'
-          label='Apellido'
-          inputProps={{
-            style: {
-              height: formHeight
-            },
-          }}
-          InputLabelProps={{
-            style: {
-              marginTop: formMargin
-            },
-          }}
+          label='Apellido *'
+          error={ errors.surname?.message ? true : false }
           {...register("surname")}
         />
         { errors.surname?.message && 
@@ -143,20 +130,11 @@ export default function FormPromo() {
         </Typography>}
 
         <TextField
-          required
+          InputLabelProps={{ shrink: true }}
           id='email'
           type='email'
-          label='E-mail'
-          inputProps={{
-            style: {
-              height: formHeight
-            },
-          }}
-          InputLabelProps={{
-            style: {
-              marginTop: formMargin
-            },
-          }}
+          label='E-mail *'
+          error={ errors.email?.message ? true : false }
           {...register("email")}
         />
         { errors.email?.message && 
@@ -174,20 +152,11 @@ export default function FormPromo() {
         </Typography>}
 
         <TextField
-          required
+          InputLabelProps={{ shrink: true }}
           id='phone'
           type='text'
-          label='Teléfono'
-          inputProps={{
-            style: {
-              height: formHeight
-            },
-          }}
-          InputLabelProps={{
-            style: {
-              marginTop: formMargin
-            },
-          }}
+          label='Teléfono *'
+          error={ errors.phone?.message ? true : false }
           {...register("phone")}
         />
         { errors.phone?.message && 
@@ -205,20 +174,11 @@ export default function FormPromo() {
         </Typography>}
 
         <TextField
+          InputLabelProps={{ shrink: true }}
           id='website'
           type='text'
           label='Sitio web actual (si tienes)'
           {...register("website")}
-          inputProps={{
-            style: {
-              height: formHeight
-            },
-          }}
-          InputLabelProps={{
-            style: {
-              marginTop: formMargin
-            },
-          }}
         />
       </ThemeProvider>
 

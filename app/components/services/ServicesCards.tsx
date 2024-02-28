@@ -5,32 +5,21 @@ import { TypoH3, TypoBody1 } from "../../globalStyles";
 
 export default function ServicesCards ( param:any ) {
   const { 
-    content, right, backgroundColorCards, colorFontCards, iconCardTop
+    content, flex, backgroundColorCards, colorFontCards, iconCardTop
   } = param;
 
-  const cardRight = (
+  const renderCard = (
     <Card 
       sx={{ 
-        display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', 
-        right: { xl: '17%', lg: '8%', md: '46%', sm: '45.5%', xs: '39.5%' },
-        width: { md: '85px', sm: '75px', xs: '75px'}, height: { md: '85px', sm: '75px', xs: '75px'}, 
+        display: 'flex', position: 'absolute',
+        justifyContent: 'center', alignItems: 'center',
+        width: { md: '85px', sm: '75px', xs: '75px'}, 
+        height: { md: '85px', sm: '75px', xs: '75px'}, 
         borderRadius: '100%', border: '2px solid black', backgroundColor: '#B5F53F',
         filter: 'drop-shadow(10px 10px 15px rgba(5, 22, 34, 0.50)) drop-shadow(6px 6px 0px #191919)',
-        mt: { lg: -5, sm: -6.2, xs: -5.7 }
-      }}
-    >
-      { iconCardTop }
-    </Card>
-  )
-
-  const cardLeft = (
-    <Card 
-      sx={{ 
-        display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', 
-        left: { xl: '17%', lg: '8%', md: '46%', sm: '44.6%', xs: '39.5%' }, mt: -5, 
-        width: { md: '85px', sm: '75px', xs: '75px'}, height: { md: '85px', sm: '75px', xs: '75px'}, 
-        borderRadius: '100%', border: '2px solid black', backgroundColor: '#B5F53F',
-        filter: 'drop-shadow(10px 10px 15px rgba(5, 22, 34, 0.50)) drop-shadow(6px 6px 0px #191919)'
+        mt: { xl: -2, sm: -4, xs: -2.5 },
+        ml: { xl: -5, sm: 0, xs: 0},
+        mr: { xl: -4, sm: 0, xs: 0}
       }}
     >
       { iconCardTop }
@@ -39,7 +28,9 @@ export default function ServicesCards ( param:any ) {
 
   return(
     <Box sx={{ mb: { lg: 12, md: 15, xs: 13 } }}>
-      { right ? cardRight : cardLeft }
+      <Box sx={{ display: 'flex', justifyContent: { xl: flex, xs: 'center' }, alignItems: 'center' }}>
+        { renderCard }
+      </Box>
 
       <Card 
         sx={{ 
@@ -52,10 +43,10 @@ export default function ServicesCards ( param:any ) {
         <CardContent sx={{ width: { lg: '1000px', md: '780px', sm: '670px' } }}>
           <Box 
             sx={{ 
-              display: { lg: 'flex', xs: 'flex' },
-              flexDirection: { lg: 'row', xs: 'column' },
-              alignItems: { lg: 'normal', xs: 'center' },
-              mt: { lg: 2, xs: 7 } 
+              display: 'flex',
+              flexDirection: { xl: 'row', xs: 'column' },
+              alignItems: { xl: 'normal', xs: 'center' },
+              mt: { xl: 2, xs: 4 } 
             }}
           >
             <Typography 
@@ -73,10 +64,10 @@ export default function ServicesCards ( param:any ) {
             
             <Box 
               sx={{ 
-                width: { lg: '2px', xs: '150px' }, 
-                height: { lg: '33px', md: '3px', xs: '2px' }, 
+                width: { xl: '2px', sm: '300px', xs: '180px' }, 
+                height: { xl: '33px', md: '3px', xs: '2px' }, 
                 background: colorFontCards, 
-                mx: { lg: 2, xs: 0 }, my: { lg: 0, xs: 3 }
+                mx: { xl: 2, xs: 0 }, my: { xl: 0, xs: 3 }
               }}
             />
 

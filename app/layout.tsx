@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "Crea tu negocio"
 };
 
-const key:string = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'; //? Key de testeo para modo local
-//const key = '6Le8M9AoAAAAAHpXqz7JVdZyWB824wDhgn2pQF56';
+// const key:string = '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'; //? Key de testeo para modo local
+const key:string = '6Lcw160oAAAAAH7HApHJB23VB6xeIY5NTjoDrvEj';
 
 export default function RootLayout({
   children,

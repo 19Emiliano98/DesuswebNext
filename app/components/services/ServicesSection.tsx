@@ -32,7 +32,7 @@ export default function ServicesSection () {
       <Box 
         sx={{ 
           display: 'flex', alignItems: 'center',
-          mt: 2, mb: { lg: 8, md: 15, xs: 12 },
+          mt: 2, mb: { xl: 8, md: 15, xs: 12 },
           ml: { sm: 0, xs: 2 }
         }}
       >
@@ -72,7 +72,7 @@ export default function ServicesSection () {
 
       <ServicesCards 
         content={ tiendaOnline }
-        right={ true }
+        flex={ 'flex-end' }
         backgroundColorCards={ 'white' }
         colorFontCards={ 'black' }
         iconCardTop={<LocalGroceryStoreOutlinedIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '34px', xs: '29px' } }}/>}
@@ -80,7 +80,7 @@ export default function ServicesSection () {
 
       <ServicesCards 
         content={ landingPage }
-        right={ false }
+        flex={ 'flex-start' }
         backgroundColorCards={ '#181818' }
         colorFontCards={ 'white' }
         iconCardTop={<ViewQuiltIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '34px', xs: '29px' } }}/>}
@@ -88,7 +88,7 @@ export default function ServicesSection () {
 
       <ServicesCards 
         content={ desarrolloLibre }
-        right={ true }
+        flex={ 'flex-end' }
         backgroundColorCards={ 'white' }
         colorFontCards={ 'black' }
         iconCardTop={<DeveloperModeIcon fontSize="inherit" sx={{ fontSize: { md: '45px', sm: '34px', xs: '29px' } }}/>}

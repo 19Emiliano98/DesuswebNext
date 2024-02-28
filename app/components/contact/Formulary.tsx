@@ -9,6 +9,7 @@ import { userSchema, mappedPlans } from "./userSchema";
 import { TypoFormError } from '../../globalStyles';
 import Button from '../../ui/Button';
 import { grey } from '@mui/material/colors';
+import { fontInter } from '../../ui/fonts';
 
 type Inputs = {
   name: string;
@@ -24,7 +25,7 @@ const theme:object = createTheme({
   }
 });
 
-const url:string = 'https://desusweb.com/api/mail/';
+const url:string = 'https://desusweb.com/api/mail';
 
 const Toast = Swal.mixin({
   toast: true,
@@ -37,9 +38,6 @@ const Toast = Swal.mixin({
     toast.addEventListener('mouseleave', Swal.resumeTimer)
   }
 })
-
-const formHeight:number = 17
-const formMargin:string = '-2px'
 
 export default function Formulary() {
   const {
@@ -55,7 +53,7 @@ export default function Formulary() {
   
   useEffect(() => {
     if (isSubmitSuccessful) {
-      reset({ name: "", surname: "", email: "", plan: "", comment: "" })
+      reset({ name: "", surname: "", email: "", comment: "" })
     }
   }, [formState, register, reset])
 
@@ -66,15 +64,13 @@ export default function Formulary() {
   ));
   
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    /* fetch( url , {
+    fetch( url , {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json'
         }
-      }); */
-
-    console.log(data);
+      });
 
     Toast.fire({
       icon: 'success',
@@ -104,22 +100,12 @@ export default function Formulary() {
       >
         <ThemeProvider theme={theme}>
           <TextField
-            required
+            InputLabelProps={{ shrink: true }}
             id='name'
             type='text'
-            label='Nombre'
+            label='Nombre *'
             {...register("name")}
             error={ errors.name?.message ? true : false }
-            inputProps={{
-              style: {
-                height: formHeight
-              },
-            }}
-            InputLabelProps={{
-              style: {
-                marginTop: formMargin
-              },
-            }}
           />
           
           { errors.name?.message && 
@@ -137,22 +123,12 @@ export default function Formulary() {
           </Typography>}
 
           <TextField
-            required
+            InputLabelProps={{ shrink: true }}
             id='surname'
             type='text'
-            label='Apellido'
+            label='Apellido *'
             {...register("surname")}
             error={ errors.surname?.message ? true : false }
-            inputProps={{
-              style: {
-                height: formHeight
-              },
-            }}
-            InputLabelProps={{
-              style: {
-                marginTop: formMargin
-              },
-            }}
           />
           { errors.surname?.message && 
           
@@ -171,22 +147,12 @@ export default function Formulary() {
           }
 
           <TextField
-            required
+            InputLabelProps={{ shrink: true }}
             id='email'
-            type='email'
-            label='E-mail'
+            type='text'
+            label='E-mail *'
             {...register("email")}
             error={ errors.email?.message ? true : false }
-            inputProps={{
-              style: {
-                height: formHeight
-              },
-            }}
-            InputLabelProps={{
-              style: {
-                marginTop: formMargin
-              },
-            }}
           />
           { errors.email?.message && 
           
@@ -213,19 +179,9 @@ export default function Formulary() {
               native: true
             }}
             {...register("plan")}
-            inputProps={{
-              style: {
-                height: formHeight
-              },
-            }}
-            InputLabelProps={{
-              style: {
-                marginTop: formMargin
-              },
-            }}
             
           >
-            {plansOptions}
+            { plansOptions }
           </TextField>
           { errors.plan?.message && 
             <Typography 
@@ -243,6 +199,7 @@ export default function Formulary() {
           }
 
           <TextField
+            InputLabelProps={{ shrink: true }}
             id='comment'
             type='text'
             multiline
@@ -266,6 +223,11 @@ export default function Formulary() {
             </Typography>
           }
         </ThemeProvider>
+
+      <Typography 
+      variant="body2"
+      sx={{ fontSize: '16px', fontFamily: fontInter, fontWeight: 600, mt: '24px' }}
+      >* Campos obligatorios</Typography>
       
       <Box sx={{ m:'80px auto 0px auto' }}>
         <Button content={'Enviar'} type={'submit'} href={''} backColor={'var(--Primario, #B5F53F)'}>Submit</Button>

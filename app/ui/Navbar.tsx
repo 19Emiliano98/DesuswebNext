@@ -14,9 +14,9 @@ export default function Navbar () {
     goTo: string;
   }
   const linkBar:linkbarProps[] = [ 
-    { title: 'Inicio', goTo: '#home' },
-    { title: 'Servicios', goTo: '#servicios' },
-    { title: 'Contacto', goTo: '#contacto' }
+    { title: 'Inicio', goTo: '/#home' },
+    { title: 'Servicios', goTo: '/#servicios' },
+    { title: 'Contacto', goTo: '/#contacto' }
   ];
 
   let isLogin:boolean
