@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import Button from '../../ui/Button';
-import { TypoH3, TypoBody1 } from "../../globalStyles";
+import { TypoH3, TypoH4, TypoBody2 } from "../../globalStyles";
 
 
 export default function ServicesCards ( param:any ) {
@@ -51,7 +51,7 @@ export default function ServicesCards ( param:any ) {
           >
             <Typography 
               sx={{
-                fontFamily: TypoH3.fontFamily,
+                fontFamily: TypoH3.fontFamily.style,
                 fontSize: TypoH3.fontSize,
                 fontStyle: TypoH3.fontStyle,
                 fontWeight: TypoH3.fontWeight,
@@ -73,11 +73,11 @@ export default function ServicesCards ( param:any ) {
 
             <Typography 
               sx={{
-                fontFamily: TypoH3.fontFamily,
-                fontSize: TypoH3.fontSize,
-                fontStyle: TypoH3.fontStyle,
-                fontWeight: TypoH3.fontWeight,
-                lineHeight: TypoH3.lineHeight
+                fontFamily: TypoH4.fontFamily.style,
+                fontSize: TypoH4.fontSize,
+                fontStyle: TypoH4.fontStyle,
+                fontWeight: TypoH4.fontWeight,
+                lineHeight: TypoH4.lineHeight
               }}
               variant="h3"
             >
@@ -88,11 +88,11 @@ export default function ServicesCards ( param:any ) {
             <Typography 
               sx={{
                 width: { lg: '960px', md: '730px', sm: '630px' },
-                fontFamily: TypoBody1.fontFamily,
-                fontSize: TypoBody1.fontSize,
-                fontStyle: TypoBody1.fontStyle,
-                fontWeight: TypoBody1.fontWeight,
-                lineHeight: TypoBody1.lineHeight, mb: 4
+                fontFamily: TypoBody2.fontFamily.style,
+                fontSize: TypoBody2.fontSize,
+                fontStyle: TypoBody2.fontStyle,
+                fontWeight: TypoBody2.fontWeight,
+                lineHeight: TypoBody2.lineHeight, mb: 4
               }}
               variant="body1"
             >

@@ -48,7 +48,7 @@ export default function SkillsCards() {
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: { sm: 11, xs: 8 } }}>
       <Typography 
         sx={{ 
-          fontFamily: TypoH2.fontFamily,
+          fontFamily: TypoH2.fontFamily.style,
           fontSize: TypoH2.fontSize,
           fontStyle: TypoH2.fontStyle,
           fontWeight: TypoH2.fontWeight,

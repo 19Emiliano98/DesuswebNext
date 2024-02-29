@@ -20,7 +20,7 @@ export default function ContactSection () {
 					<Typography
 						component="h2"
 						sx={{
-							fontFamily: TypoH2.fontFamily,
+							fontFamily: TypoH2.fontFamily.style,
 							fontSize: TypoH2.fontSize,
 							fontStyle: TypoH2.fontStyle,
 							fontWeight: TypoH2.fontWeight,

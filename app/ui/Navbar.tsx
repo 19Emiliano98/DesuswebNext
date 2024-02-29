@@ -2,9 +2,10 @@
 
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react';
-import { Box, Toolbar, MenuItem, Link, CardMedia, Tooltip, IconButton, Menu } from '@mui/material';
+import { Box, Toolbar, MenuItem, Link, CardMedia, Tooltip, IconButton, Menu, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { fontSpaceGrotesk } from './fonts';
+import { fontSpaceGrotesk, fontUnicaOne } from './fonts';
+
 
 export default function Navbar () {
   const [ anchorElUser, setAnchorElUser ] = useState< null | HTMLElement >(null);
@@ -36,7 +37,7 @@ export default function Navbar () {
     justifyContentOfNavbar = 'space-between';
     marginIconNavbar = { lg: 15, md: 8, sm: 6 }
     marginLinksNavbar = { lg: 30, md: 9, sm: 7 }
-    transformStyleData = { lg: 'translate( -146px , -10px )', md: 'translate( -90px , -10px )', sm: 'translate( -74px , -10px )', xs: 'translate( -18px , -9px )' }
+    transformStyleData = { lg: 'translate( -146px , -10px )', md: 'translate( -90px , -10px )', sm: 'translate( -63px , -1px )', xs: 'translate( -10px , 2px )' }
   }
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -145,21 +146,40 @@ export default function Navbar () {
         }}
       >
         <Box
-          sx={{
-            width: { sm: 75, xs: 66 }, height: { sm: 75, xs: 66 },
-            borderRadius: '50px',
-            backgroundColor: '#3F3F3F',
-            ml: marginIconNavbar
+          sx={{ 
+            display: 'flex'
           }}
         >
-          <CardMedia
+          <Box
             sx={{
-              width: { sm: '128px', xs: '105px' }, height: { sm: '94px', xs: '80px'},
-              ml: marginIconNavbar, 
-              transform: transformStyleData
+              width: { md: 75, sm: 69, xs: 55 }, height: { md: 75, sm: 69, xs: 55 },
+              borderRadius: '50px',
+              backgroundColor: '#3F3F3F',
+              ml: marginIconNavbar
             }}
-            image="/Rocket.png"
-          />
+          >
+            <CardMedia
+              sx={{
+                width: { md: '128px', sm: '100px', xs: '80px' }, height: { md: '94px', sm: '70px', xs: '50px'},
+                ml: marginIconNavbar, 
+                transform: transformStyleData
+              }}
+              image="/Rocket.png"
+            />
+          </Box>
+
+          <Typography 
+            sx={{ 
+              display: 'flex', alignItems: 'center',
+              fontFamily: fontUnicaOne.style,
+              fontSize: { lg: '40px', sm: '30px', xs: '20px'},
+              fontWeight: 400,
+              lineHeight: 'normal',
+              color: '#FFF',
+              ml: 2.4
+            }}>
+            Desus Web
+          </Typography>
         </Box>
 
         <Box sx={{ display: 'flex', mr: marginLinksNavbar }}>

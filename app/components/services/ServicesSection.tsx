@@ -18,7 +18,7 @@ export default function ServicesSection () {
     >
       <Typography 
       sx={{
-        fontFamily: TypoH2.fontFamily,
+        fontFamily: TypoH2.fontFamily.style,
         fontSize: TypoH2.fontSize,
         fontStyle: TypoH2.fontStyle,
         fontWeight: TypoH2.fontWeight,
@@ -41,7 +41,7 @@ export default function ServicesSection () {
         <Typography 
           sx={{
             width: { sm: 'auto', xs: 261.4 },
-            fontFamily: TypoBody1.fontFamily,
+            fontFamily: TypoBody1.fontFamily.style,
             fontSize: TypoBody1.fontSize,
             fontStyle: TypoBody1.fontStyle,
             fontWeight: TypoBody1.fontWeight,

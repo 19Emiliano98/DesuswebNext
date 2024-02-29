@@ -34,7 +34,7 @@ export default function HomeSection() {
             sx={{
               width: { md: 700, sm: 300, xs: 300 },
               textAlign: 'center',
-              fontFamily: TypoH1.fontFamily,
+              fontFamily: TypoH1.fontFamily.style,
               fontSize: TypoH1.fontSize,
               fontStyle: TypoH1.fontStyle,
               fontWeight: TypoH1.fontWeight,
