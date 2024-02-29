@@ -65,15 +65,6 @@ export default function HomeSection() {
                 image='/HomeCloudImage/Cloud2.png'
               />
             </Box>
-            {/* <Box 
-              sx={{ 
-                position: 'absolute', 
-                mt: { lg: -9.8, md: -8.05, sm: -5.1, xs: -5 }, 
-                ml: { lg: 27, md: 22.6, sm: 14.5, xs: 13.55 }
-              }}
-            >
-              <TitleAnimation />
-            </Box> */}
           </Typography>
 
           <Button content={'Contáctanos'} type={'button'} href={'#contacto'} backColor={'white'}/>
@@ -81,21 +72,6 @@ export default function HomeSection() {
       </Box>
       
       <Divider sx={{ width: { xl: '1000px', lg: '1100px', md: '700px', sm: '500px', xs: '300px'}, mx: 'auto', mt: { sm: '200px', xs: '130px' }, border: 'solid 1px black' }}/>
-
-      {/* // !! Scroll */}
-      {/* // ?? se comento porque se elimino del diseño, no lo borro para que quede registrado por si se vuelve a usar */}
-      {/* <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: { sm: 5, xs: 12 } }}>
-        <Typography sx={{ fontSize: { md: '23px', xs: '17px' } }} variant="body2">Scroll</Typography>
-				<AnimatedArrowDownwardIcon sx={{ color: '#FBC837' }}/>
-        <Box 
-          sx={{ 
-            borderBottom: 'solid 2px gray', color: '#444444', opacity: 0.3, width: '75%',
-            mt: 2, mb: 8 
-          }}
-        >
-            .
-        </Box>
-			</Box> */}
       
       <SkillsCards />
       

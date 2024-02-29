@@ -79,7 +79,7 @@ export default function Login() {
                 type='password'
               />
 
-              <Button content={'Ingresar'} type={'submit'} href={''}/>
+              <Button content={'Ingresar'} type={'submit'} href={''} backColor={'var(--Primario, #B5F53F)'}/>
             </Box>
           </ThemeProvider>
         </CardContent>

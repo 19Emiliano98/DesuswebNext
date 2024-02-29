@@ -6,7 +6,6 @@ import { Box, Toolbar, MenuItem, Link, CardMedia, Tooltip, IconButton, Menu, Typ
 import MenuIcon from '@mui/icons-material/Menu';
 import { fontSpaceGrotesk, fontUnicaOne } from './fonts';
 
-
 export default function Navbar () {
   const [ anchorElUser, setAnchorElUser ] = useState< null | HTMLElement >(null);
   const [ isDesktop, setIsDesktop ] = useState<boolean>(true);
@@ -31,7 +30,7 @@ export default function Navbar () {
     justifyContentOfNavbar = 'center';
     marginIconNavbar = { xs: 0 }
     marginLinksNavbar = { xs: 0 }
-    transformStyleData = { lg: 'translate( -25px , -11px )', md: 'translate( -25px , -10px )', sm: 'translate( -26px , -11px )', xs: 'translate( -18px , -9px )' }
+    transformStyleData = { lg: 'translate( -25px , -11px )', md: 'translate( -25px , -10px )', sm: 'translate( -12px , -1px )', xs: 'translate( -10px , 2.5px )' }
   }else{
     isLogin = false
     justifyContentOfNavbar = 'space-between';
@@ -50,12 +49,12 @@ export default function Navbar () {
 
   const renderNavbar = (
     linkBar.map( x => (
-      <MenuItem disableGutters dense key={x.title} sx={{ mx: 1, ':selected':{ backgroundColor: 'red' } }}>
+      <MenuItem disableGutters dense key={x.title} sx={{ display:{ sm: 'flex', xs: 'none' }, mx: 1, ':selected':{ backgroundColor: 'red' } }}>
         <Link 
           href={ x.goTo }
           sx={{
             textDecoration: 'none',
-            fontSize: { lg: '25px', md: '19px', xs: '13px' },
+            fontSize: { lg: '25px', md: '19px', sm: '17px', xs: '13px' },
             color: '#F5F5F5', fontWeight: 500, fontFamily: `${fontSpaceGrotesk} antialiased`
           }}
         >
@@ -66,7 +65,7 @@ export default function Navbar () {
   );
 
   const renderMobilebar = (
-    <>
+    <Box component='div' sx={{ display:{ sm: 'none', xs: 'inline' } }}>
       <Tooltip title="">
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
           <MenuIcon sx={{ color: 'white', fontSize: { sm: 40, xs: 27 } }} fontSize='inherit'/>
@@ -104,38 +103,8 @@ export default function Navbar () {
             </MenuItem>
           ))}
         </Menu>
-    </>
+    </Box>
   )
-  
-  const checkWindowSize = () => {
-    let windowWith:any;
-
-    if( typeof window !== 'undefined' ){
-      windowWith = window.innerWidth;
-    }
-    if( windowWith > 768 ){
-      setIsDesktop(true);
-    }else{
-      setIsDesktop(false)
-    }
-  }
-
-  let showAppBar;
-  if( isDesktop == true ){
-    showAppBar = renderNavbar
-  }else{
-    showAppBar = renderMobilebar
-  }
-
-  // logica cuando el usuario carga la primera vez
-  useEffect(() => {
-    checkWindowSize();
-  }, [isDesktop]);
-  
-  // cuando el usuario cambia el tamaño de la pantalla
-  if(typeof window !== 'undefined'){
-    window.addEventListener('resize', checkWindowSize)
-  }
 
   return (
     <Box>
@@ -183,7 +152,8 @@ export default function Navbar () {
         </Box>
 
         <Box sx={{ display: 'flex', mr: marginLinksNavbar }}>
-          { isLogin ? <></> : showAppBar }
+          { isLogin ? <></> : renderNavbar }  
+          { isLogin ? <></> : renderMobilebar }
         </Box>
       </Toolbar>
     </Box>
