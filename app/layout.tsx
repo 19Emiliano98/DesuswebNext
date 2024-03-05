@@ -3,6 +3,7 @@ import './main.css'
 import Navbar from "./ui/Navbar";
 import FooterSection from "./components/footer/FooterSection";
 import { ReCaptchaProvider } from "next-recaptcha-v3";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: "Desusweb",
@@ -28,6 +29,7 @@ export default function RootLayout({
           <FooterSection />
         </ReCaptchaProvider>
       </body>
+      <GoogleAnalytics gaId="https://www.googletagmanager.com/gtag/js?id=G-YC7JS6SKL8" />
     </html>
   );
 }
