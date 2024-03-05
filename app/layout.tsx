@@ -29,7 +29,7 @@ export default function RootLayout({
           <FooterSection />
         </ReCaptchaProvider>
       </body>
-      <GoogleAnalytics gaId="https://www.googletagmanager.com/gtag/js?id=G-YC7JS6SKL8" />
+      <GoogleAnalytics gaId="https://www.googletagmanager.com/gtag/js?id=G-KND1GVWM2R" />
     </html>
   );
 }
